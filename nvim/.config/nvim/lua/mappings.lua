@@ -13,6 +13,11 @@ map("n", "<leader>o", "<cmd>Outline<CR>", { desc = "Toggle Symbols Outline" })
 map("n", "<leader>fr", "<cmd>Telescope resume<CR>", { desc = "Telescope resume" })
 map("n", "<leader>gh", "<cmd>Gitsigns preview_hunk<CR>", { desc = "Git Perview Hunk" })
 map("n", "<leader>gbt", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Git Toggle blame" })
+
+map("n", "<c-h>", ":TmuxNavigateLeft<CR>")
+map("n", "<c-j>", ":TmuxNavigateDown<CR>")
+map("n", "<c-k>", ":TmuxNavigateUp<CR>")
+map("n", "<c-l>", ":TmuxNavigateRight<CR>")
 --map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
