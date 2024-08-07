@@ -110,4 +110,4 @@ export MAVEN_OPTS="-Xmx512m -Djavax.net.ssl.trustStore=$JAVA_HOME/lib/security/c
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias tmux=tmux -u
+alias tmux="tmux -u"
