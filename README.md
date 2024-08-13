@@ -35,6 +35,9 @@
     - `sudo make`
     - `sudo make install`
 
+#### Tmuxifier
+- `git clone https://github.com/jimeh/tmuxifier.git ~/.tmuxifier`
+
 #### Clone Tmux Plugin manager
 - `git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm`
 
@@ -44,3 +47,7 @@ https://www.gnu.org/software/stow/
 
 ## Installing dotfiles
 - `stow nvim tmux zsh`
+
+
+# TODO
+ - [ ] Setup Script
