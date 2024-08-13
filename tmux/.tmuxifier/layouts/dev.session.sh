@@ -7,19 +7,11 @@ session_root "$PWD"
 if initialize_session "dev"; then
   new_window "nvim"
   select_window 0
-  split_h 5
+  split_h 50
+  run_cmd "/usr/bin/tmux resize-pane -t 1 -x 55"
+  run_cmd "/usr/bin/clear"
   select_pane 0
   run_cmd "/usr/local/bin/nvim"
-
-  # Create a new window inline within session layout definition.
-  #new_window "misc"
-
-  # Load a defined window layout.
-  #load_window "example"
-
-  # Select the default active window on session creation.
-  #select_window 1
-
 fi
 
 # Finalize session creation and switch/attach to it.
