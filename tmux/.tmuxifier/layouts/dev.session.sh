@@ -9,6 +9,7 @@ if initialize_session "dev"; then
   select_window 0
   split_h 50
   run_cmd "/usr/bin/tmux resize-pane -t 1 -x 55"
+  run_cmd "/usr/local/bin/tmux resize-pane -t 1 -x 55"
   run_cmd "/usr/bin/clear"
   select_pane 0
   run_cmd "/usr/local/bin/nvim"
