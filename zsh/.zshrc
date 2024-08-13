@@ -1,5 +1,5 @@
 alias tmux="tmux -u"
-alias dev="tmuxifier load-session dev"
+alias dev="tmuxifier load-window dev"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
