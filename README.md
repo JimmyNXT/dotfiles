@@ -48,6 +48,7 @@ https://www.gnu.org/software/stow/
 ## Installing dotfiles
 - `stow nvim tmux zsh`
 
-
+## Nerdfonts
+- `wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/SourceCodePro.zip`
 # TODO
  - [ ] Setup Script
