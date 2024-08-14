@@ -18,6 +18,8 @@ map("n", "<c-h>", ":TmuxNavigateLeft<CR>")
 map("n", "<c-j>", ":TmuxNavigateDown<CR>")
 map("n", "<c-k>", ":TmuxNavigateUp<CR>")
 map("n", "<c-l>", ":TmuxNavigateRight<CR>")
+
+map("n", "<leader>rt", "<cmd>NvimTreeRefresh<CR>", { desc = "Refresh Nvim Tree" })
 --map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
