@@ -16,6 +16,6 @@ vim.api.nvim_create_autocmd({ "VimEnter" }, {
     --   return
     -- end
 
-    require("nvim-tree.api").tree.toggle { focus = false, find_file = true }
+    require("nvim-tree.api").tree.toggle { focus = true, find_file = true }
   end,
 })
