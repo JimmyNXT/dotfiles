@@ -12,6 +12,7 @@ local options = {
     sh = { "shfmt" },
     cpp = { "clang-format" },
     c = { "clang-format" },
+    perl = {"perlnavigator"},
     -- nix = {"nixpkgs-fmt"},
   },
   -- format_on_save = {

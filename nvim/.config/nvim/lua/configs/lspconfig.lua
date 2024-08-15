@@ -57,6 +57,19 @@ lspconfig.marksman.setup {
   filetypes= {"markdown", "markdown.mdx"}
 }
 
+require'lspconfig'.perlnavigator.setup{
+    cmd = { "perlnavigator" },
+    settings = {
+      perlnavigator = {
+          perlPath = 'perl',
+          enableWarnings = true,
+          perltidyProfile = '',
+          perlcriticProfile = '',
+          perlcriticEnabled = true,
+      }
+    }
+}
+
 
 -- lspconfig.rnix.setup{
 --   on_init = on_init,

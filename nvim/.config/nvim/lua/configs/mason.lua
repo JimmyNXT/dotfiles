@@ -19,7 +19,6 @@ local config = {
     "pyright",
     "black",
 
-
     -- Markdown
     "marksman",
 
@@ -29,6 +28,9 @@ local config = {
 
     -- Java
     -- "jdtls",
+
+    -- Perl
+    "perlnavigator",
   },
 }
 
