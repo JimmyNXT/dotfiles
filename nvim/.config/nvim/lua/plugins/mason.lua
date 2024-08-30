@@ -2,9 +2,7 @@ return {
   "williamboman/mason.nvim",
   config = function()
     -- dofile(vim.g.base46_cache .. "mason")
-    require("mason").setup {
-
-      ensure_installed = {
+    local ensure_installed = {
         -- lua stuff
         "lua-language-server",
         "stylua",
@@ -19,7 +17,7 @@ return {
 
         "prettier",
 
-        -- c/cpp stuff
+        -- c/cpp stuff 
         -- "clangd",
         "clang-format",
         "eslint-lsp",
@@ -35,7 +33,17 @@ return {
 
         -- Java
         -- "jdtls",
-      },
+      }
+    require("mason").setup {
+
+      ensure_installed = ensure_installed,
     }
+    vim.api.nvim_create_user_command("MasonInstallAll", function()
+        if ensure_installed and #ensure_installed > 0 then
+          vim.cmd("MasonInstall " .. table.concat(ensure_installed, " "))
+        end
+      end, {})
+
+      vim.g.mason_binaries_list = ensure_installed
   end,
 }
