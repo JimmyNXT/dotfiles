@@ -11,12 +11,12 @@ return {
   config = function()
     vim.o.conceallevel = 1
     require("obsidian").setup {
-      -- workspaces = {
-      --   {
-      --     name = "personal",
-      --     path = "~/vaults/personal",
-      --   },
-      -- },
+      workspaces = {
+        {
+          name = "personal",
+          path = "~/vaults/personal",
+        },
+      },
       notes_subdir = "notes",
 
       completion = {

@@ -45,7 +45,7 @@ return {
       semantic_letters = true,
       sidebar_filetypes = {
         NvimTree = true,
-        ["nvimtree"] = { event = "BufWipeout" },
+        -- ["nvimtree"] = { event = "BufWipeout" },
         Outline = { event = "BufWinLeave", text = "symbols-outline", align = "right" },
       },
       letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
