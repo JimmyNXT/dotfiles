@@ -244,6 +244,14 @@ fi
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
+alias tmux="tmux -u"
+alias dev="tmuxifier load-window dev"
+alias android_studio="/usr/local/android-studio/bin/studio.sh"
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+ #See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+plugins=(git)
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
