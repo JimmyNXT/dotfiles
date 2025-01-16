@@ -265,7 +265,7 @@ if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
-export PATH="$HOME/.tmuxifier/bin:/usr/sbin:$PATH"
+export PATH="$HOME/.tmuxifier/bin:/usr/sbin:/usr/local/sbin:$PATH"
 
 export ANDROID_HOME=${HOME}/Android/Sdk
 eval "$(tmuxifier init -)"
