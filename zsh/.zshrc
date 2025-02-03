@@ -8,7 +8,6 @@ zstyle ':omz:update' mode auto      # update automatically without asking
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 ENABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 HIST_STAMPS="dd-mm-yyyy"
