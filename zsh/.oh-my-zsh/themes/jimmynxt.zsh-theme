@@ -2,7 +2,7 @@
 # PROMPT+=' $(git_prompt_info)'
 prompt_text='%F{%(#.cyan.green)}┌──$'
 prompt_text+='{debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}'
-prompt_text+='(%B%F{%(#.red.cyan)}%n'$prompt_symbol$'%m%b%F{%(#.cyan.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.cyan.green)}]$(git_prompt_info)\n└─%B%(#.%F{red}#.%F{cyan}>)%b%F{reset} '
+prompt_text+='(%B%F{%(#.red.cyan)}%n'$prompt_symbol@$'%m%b%F{%(#.cyan.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.cyan.green)}]$(git_prompt_info)\n└─%B%(#.%F{red}#.%F{cyan}>)%b%F{reset} '
 
 PROMPT=$prompt_text
 
