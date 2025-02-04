@@ -57,6 +57,13 @@ lspconfig.marksman.setup {
   filetypes= {"markdown", "markdown.mdx"}
 }
 
+lspconfig.gopls.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = {'go', 'gomod', 'gowork', 'gotmpl'},
+}
+
 
 -- lspconfig.rnix.setup{
 --   on_init = on_init,

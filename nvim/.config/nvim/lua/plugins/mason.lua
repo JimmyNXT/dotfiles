@@ -33,6 +33,9 @@ return {
 
         -- Perl
         "perlnavigator",
+
+        -- GO
+        "gopls"
       },
     }
   end,

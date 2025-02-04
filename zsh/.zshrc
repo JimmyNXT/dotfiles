@@ -30,6 +30,7 @@ export LANG=en_US.UTF-8
 export EDITOR='nvim'
 
 export PATH="$HOME/.tmuxifier/bin:$PATH"
+export PATH=$PATH:/usr/local/go/bin
 
 export ANDROID_HOME=${HOME}/Android/Sdk
 eval "$(tmuxifier init -)"
