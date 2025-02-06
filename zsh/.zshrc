@@ -25,8 +25,9 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
-export LANG=en_US.UTF-8
+if command freebsd-version > /dev/null; then
+  export LANG=en_US.UTF-8
+fi
 export EDITOR='nvim'
 
 export PATH="$HOME/.tmuxifier/bin:$PATH"
