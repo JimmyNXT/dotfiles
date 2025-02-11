@@ -8,7 +8,7 @@ opt.spelllang = "en_gb"
 opt.spell = true
 opt.guifont= "SauceCodePro NF SemiBold"
 opt.virtualedit="block"
-wo.relativenumber = true
+wo.relativenumber = false
 opt.scrolloff = 10
 opt.sidescrolloff = 8
 
