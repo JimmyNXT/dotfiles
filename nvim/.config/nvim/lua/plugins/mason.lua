@@ -35,7 +35,12 @@ return {
         "perlnavigator",
 
         -- GO
-        "gopls"
+        "gopls",
+        "golines",
+
+        --Spelling
+        "codespell",
+
       },
     }
   end,

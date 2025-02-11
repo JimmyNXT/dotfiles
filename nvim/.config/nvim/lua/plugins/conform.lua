@@ -16,6 +16,7 @@ return {
         sh = { "shfmt" },
         cpp = { "clang-format" },
         c = { "clang-format" },
+        go ={"golines"},
         -- nix = {"nixpkgs-fmt"},
       },
       -- format_on_save = {
