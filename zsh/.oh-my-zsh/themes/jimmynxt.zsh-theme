@@ -6,7 +6,7 @@ prompt_text+='(%B%F{%(#.red.cyan)}%n'$prompt_symbol@$'%m%b%F{%(#.cyan.green)})-[
 
 PROMPT=$prompt_text
 
-ZSH_THEME_GIT_PROMPT_PREFIX="-%{$fg_bold[blue]%}{%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="-%{$fg_bold[blue]%}(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%b%F{%(#.cyan.green)}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}%1{✗%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
