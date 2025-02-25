@@ -64,6 +64,13 @@ lspconfig.gopls.setup {
   filetypes = {'go', 'gomod', 'gowork', 'gotmpl'},
 }
 
+lspconfig.bashls.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = {'bash', 'sh', 'zsh', 'ksh', 'csh'},
+}
+
 
 -- lspconfig.rnix.setup{
 --   on_init = on_init,
