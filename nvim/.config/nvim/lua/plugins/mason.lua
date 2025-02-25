@@ -42,7 +42,8 @@ return {
         "codespell",
 
         --Bash
-        "bash-language-server"
+        "bash-language-server",
+        "shfmt",
 
       },
     }
