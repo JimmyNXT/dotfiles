@@ -41,6 +41,9 @@ return {
         --Spelling
         "codespell",
 
+        --Bash
+        "bash-language-server"
+
       },
     }
   end,
