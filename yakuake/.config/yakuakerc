@@ -4,6 +4,10 @@ DefaultProfile=JimmyNXT.profile
 [Dialogs]
 FirstRun=false
 
+[Shortcuts]
+next-session=Ctrl+PgUp
+previous-session=Ctrl+PgDown
+
 [Window]
 Height=100
 Width=100
