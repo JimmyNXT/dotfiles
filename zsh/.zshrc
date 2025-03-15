@@ -25,7 +25,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-if command freebsd-version > /dev/null; then
+if command freebsd-version 2> /dev/null; then
   export LANG=en_US.UTF-8
 fi
 export EDITOR='nvim'
