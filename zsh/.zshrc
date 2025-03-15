@@ -30,7 +30,7 @@ if command freebsd-version 2> /dev/null; then
 fi
 export EDITOR='nvim'
 
-export PATH="$HOME/.tmuxifier/bin:$PATH"
+export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
 export ANDROID_HOME=${HOME}/Android/Sdk
