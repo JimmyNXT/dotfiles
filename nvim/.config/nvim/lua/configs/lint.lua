@@ -1,10 +1,16 @@
 require("lint").linters_by_ft = {
-  javascript = { "eslint" },
-  typescript = { "eslint" },
+  javascript = { "eslint_d" },
+  typescript = { "eslint_d" },
+  markdown = { "vale" },
+  text = { "vale" },
+  json = { "jsonlint" },
+  rst = { "vale" },
+  dockerfile = { "hadolint" },
+  go = {"gospel"},
 }
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  callback = function()
-    require("lint").try_lint()
-  end,
-})
+-- vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+--   callback = function()
+--     require("lint").try_lint()
+--   end,
+-- })

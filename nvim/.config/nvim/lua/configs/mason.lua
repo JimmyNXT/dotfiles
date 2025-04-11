@@ -1,44 +1,45 @@
-local options =  {
-      ensure_installed = {
-        -- lua stuff
-        "lua-language-server",
-        "stylua",
+local options = {
+  ensure_installed = {
+    -- lua stuff
+    "lua-language-server",
+    "stylua",
 
-        -- web dev stuff
-        "css-lsp",
-        "html-lsp",
-        "typescript-language-server",
+    -- web dev stuff
+    "css-lsp",
+    "html-lsp",
+    "typescript-language-server",
 
-        "prettier",
+    "prettier",
+    "eslint_d",
 
-        -- c/cpp stuff
-        -- "clangd",
-        "clang-format",
-        "eslint-lsp",
-        "pyright",
-        "black",
+    -- c/cpp stuff
+    -- "clangd",
+    "clang-format",
+    "eslint-lsp",
+    "pyright",
+    "black",
 
-        -- Markdown
-        "marksman",
+    -- Markdown
+    "marksman",
 
-        -- Nix
-        -- "rnix-lsp",
-        -- "nixpkgs-fmt",
+    -- Nix
+    -- "rnix-lsp",
+    -- "nixpkgs-fmt",
 
-        -- Java
-        -- "jdtls",
+    -- Java
+    -- "jdtls",
 
-        -- Perl
-        "perlnavigator",
+    -- Perl
+    "perlnavigator",
 
-        -- GO
-        "gopls",
-        "golines",
+    -- GO
+    "gopls",
+    "golines",
+    "gospel",
 
-        --Spelling
-        "codespell",
-
-      },
-    }
+    --Spelling
+    "codespell",
+  },
+}
 
 return options
