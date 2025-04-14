@@ -5,6 +5,8 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
+map("n", ":W", ":w", { desc = "Save Damit Save" })
+
 map("n", "<leader>fm", function()
   require("conform").format()
 end)
