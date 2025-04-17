@@ -193,3 +193,4 @@ bar {
 }
 
 exec firefox-esr
+exec --no-startup-id synclient VertScrollDelta=-111
