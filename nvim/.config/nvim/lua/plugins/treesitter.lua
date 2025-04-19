@@ -4,30 +4,7 @@ return {
   cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
   build = ":TSUpdate",
   opts = function()
-    return {
-      ensure_installed = {
-        "vim",
-        "lua",
-        "html",
-        "css",
-        "javascript",
-        "typescript",
-        "tsx",
-        "c",
-        "markdown",
-        "markdown_inline",
-      },
-      indent = {
-        enable = true,
-        -- disable = {
-        --   "python"
-        -- },
-      },
-      highlight = {
-        enable = true,
-        use_languagetree = true,
-      },
-    }
+    return require "configs.treesitter"
   end,
   config = function(_, opts)
     dofile(vim.g.base46_cache .. "syntax")
