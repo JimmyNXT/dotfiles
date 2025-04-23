@@ -71,6 +71,14 @@ lspconfig.bashls.setup {
   filetypes = {'bash', 'sh', 'zsh', 'ksh', 'csh'},
 }
 
+lspconfig.perlnavigator.setup{
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = {'perl'},
+
+}
+
 
 -- lspconfig.rnix.setup{
 --   on_init = on_init,
