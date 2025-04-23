@@ -40,7 +40,7 @@ lspconfig.clangd.setup {
   on_init = on_init,
   capabilities = capabilities,
   filetypes = { "c", "cpp" },
-  root_dir = lspconfig.util.root_pattern(".git", "compile_commands.json"),
+  root_dir = lspconfig.util.root_pattern(".git"),
 }
 
 lspconfig.pyright.setup {
@@ -76,7 +76,7 @@ lspconfig.perlnavigator.setup{
   on_init = on_init,
   capabilities = capabilities,
   filetypes = {'perl'},
-
+  root_dir = lspconfig.util.root_pattern(".git"),
 }
 
 
