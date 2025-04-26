@@ -7,6 +7,7 @@
     # jetbrains.pycharm-professional
     # jre8
     qemu
+    kdePackages.konsole
     # quickemu
   ];
 }

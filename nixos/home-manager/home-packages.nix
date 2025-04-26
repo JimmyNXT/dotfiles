@@ -6,6 +6,7 @@
 
     # Desktop apps
     nemo
+    firefox
     blueman
     obsidian
     pavucontrol
@@ -18,22 +19,25 @@
     xclip
     fzf
     xca
-    # git-graph
-    # grimblast
-    # htop
-    # hyprpicker
+    git
     ntfs3g
-    # mediainfo
-    # playerctl
     ripgrep
-    # udisks
+    neovim
+    tmux
+    virt-manager
+    oh-my-zsh
+    vscode
     unzip
     wget
     curl
-    # wtype
     zip
     virt-manager
     stow
+    zsh
+
+    #fonts
+    font-awesome
+    (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
 
     # Coding stuff
     # openjdk23
