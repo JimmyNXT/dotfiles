@@ -23,20 +23,5 @@
                 i3-gaps
             ];
         };
-
-        desktopManager = {
-            # default = "none";
-            xterm.enable = false;
-        };
-        # displayManager.auto = { 
-        #     # enable = true; 
-        #     user = "jimmynxt"; 
-        #     lightdm = {
-        #         enable = true;
-        #         greeter.enable = false;
-        #         autoLogin.enable = true;
-        #         autoLogin.user = "jimmynxt";
-        #     };
-        # };
     };
 }
