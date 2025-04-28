@@ -15,6 +15,7 @@ local config = {
     "javadoc",
     "javascript",
     "lua",
+    "nix",
     "make",
     "markdown",
     "markdown_inline",

@@ -30,17 +30,14 @@ if command freebsd-version > /dev/null 2>&1; then
 fi
 export EDITOR='nvim'
 
-export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 export PATH=$PATH:/usr/local/go/bin
 
 export ANDROID_HOME=${HOME}/Android/Sdk
-eval "$(tmuxifier init -)"
 
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias tmux='tmux -u'
-alias dev='tmuxifier load-window dev'
 alias android_studio='/usr/local/android-studio/bin/studio.sh'
 alias calc='f() { echo $1 | bc };f'
 

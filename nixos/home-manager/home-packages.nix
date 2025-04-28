@@ -17,23 +17,20 @@
     # CLI utils
     bc            # Calculator
     brightnessctl # Brightness control
-    xclip
+    curl
     fzf
-    xca
     git
     ntfs3g
-    ripgrep
-    # neovim
-    tmux
-    virt-manager
     oh-my-zsh
-    vscode
-    unzip
-    wget
-    curl
-    zip
-    virt-manager
+    ripgrep
     stow
+    unzip
+    virt-manager
+    vscode
+    wget
+    xca
+    xclip
+    zip
     zsh
 
     #fonts
