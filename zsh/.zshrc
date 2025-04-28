@@ -42,6 +42,7 @@ alias l='ls -CF'
 alias tmux='tmux -u'
 alias dev='tmuxifier load-window dev'
 alias android_studio='/usr/local/android-studio/bin/studio.sh'
+alias calc='f() { echo $1 | bc };f'
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!

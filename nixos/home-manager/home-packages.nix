@@ -5,6 +5,7 @@
     # Packages in each category are sorted alphabetically
 
     # Desktop apps
+    arandr
     nemo
     firefox
     blueman
@@ -22,7 +23,7 @@
     git
     ntfs3g
     ripgrep
-    neovim
+    # neovim
     tmux
     virt-manager
     oh-my-zsh

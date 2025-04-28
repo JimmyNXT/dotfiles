@@ -5,7 +5,7 @@
     # ./git.nix
     # ./i3wm
     # ./lazygit.nix
-    # ./neovim.nix
+    ./neovim.nix
     ./qemu.nix
     # ./tmux.nix
     # ./virt-manager.nix

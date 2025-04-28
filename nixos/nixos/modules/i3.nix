@@ -1,16 +1,8 @@
 { pkgs, ... }:{
-    services.xserver = {
+    services = {
+      xserver = {
         enable = true;
-        layout = "us";
-        libinput = {
-          enable = true;
-          disableWhileTyping = true;
-          naturalScrolling = true;
-          additionalOptions = ''
-            Option "PalmDetection" "True"
-          '';
-        };
-
+        xkb.layout = "us";
         
         windowManager = {
             # default = "i3";
@@ -22,6 +14,18 @@
                 i3status
                 i3-gaps
             ];
+        };
+      };
+      libinput = {
+          enable = true;
+          touchpad = {
+            naturalScrolling = true;
+            disableWhileTyping = true;
+            additionalOptions = ''
+              Option "PalmDetection" "True"
+            '';
+          };
+          
         };
     };
 }

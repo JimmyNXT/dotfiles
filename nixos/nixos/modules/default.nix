@@ -14,6 +14,7 @@
     ./nh.nix
     ./nix.nix
     ./ssh.nix
+    ./theme.nix
     ./timezone.nix
     ./user.nix
     ./virt-manager.nix
