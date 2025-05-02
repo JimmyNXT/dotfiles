@@ -16,6 +16,7 @@
     ./ssh.nix
     ./theme.nix
     ./timezone.nix
+    ./udisk2.nix
     ./user.nix
     ./virt-manager.nix
     # ./zram.nix

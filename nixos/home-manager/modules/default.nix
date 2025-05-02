@@ -1,5 +1,6 @@
 {
   imports = [
+    ./file-manager.nix
     ./fonts.nix
     # ./git.nix
     # ./i3wm
@@ -7,6 +8,6 @@
     ./qemu.nix
     ./tmux.nix
     # ./virt-manager.nix
-    # ./vscode.nix
+    ./vscode.nix
   ];
 }

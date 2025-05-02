@@ -6,27 +6,34 @@
 
     # Desktop apps
     arandr
-    nemo
-    firefox
     blueman
+    firefox
+    kdePackages.okular
+    libsForQt5.spectacle
+    mendeley
     obsidian
     pavucontrol
     teams-for-linux
-    # telegram-desktop
+    usbimager
+    ventoy-full
 
     # CLI utils
     bc            # Calculator
     brightnessctl # Brightness control
     curl
     fzf
+    gdb
+    gf
     git
+    linuxHeaders
     ntfs3g
     oh-my-zsh
+    platformio
+    pulseaudio
     ripgrep
     stow
     unzip
     virt-manager
-    vscode
     wget
     xca
     xclip
@@ -38,9 +45,9 @@
     (nerdfonts.override { fonts = [ "SourceCodePro" ]; })
 
     # Coding stuff
-    # openjdk23
-    # nodejs
-    # python311
+    openjdk23
+    nodejs
+    python311
 
     # # WM stuff
     # libsForQt5.xwaylandvideobridge
