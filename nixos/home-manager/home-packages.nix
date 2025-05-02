@@ -18,6 +18,7 @@
     ventoy-full
 
     # CLI utils
+    avrdude
     bc            # Calculator
     brightnessctl # Brightness control
     curl
@@ -28,7 +29,8 @@
     linuxHeaders
     ntfs3g
     oh-my-zsh
-    platformio
+    openocd
+    platformio-core
     pulseaudio
     ripgrep
     stow

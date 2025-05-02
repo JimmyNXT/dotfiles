@@ -9,6 +9,7 @@
       vscode-extensions.ms-python.python
       vscode-extensions.ms-python.black-formatter
       vscode-extensions.ms-python.debugpy
+      # vscode-extensions.platformio.platformio-vscode-ide
     ];
   };
 }
