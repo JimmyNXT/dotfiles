@@ -18,10 +18,10 @@
     ventoy-full
 
     # CLI utils
-    avrdude
     bc            # Calculator
     brightnessctl # Brightness control
     curl
+    feh
     fzf
     gdb
     gf

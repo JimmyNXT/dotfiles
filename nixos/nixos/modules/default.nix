@@ -19,6 +19,7 @@
     ./udisk2.nix
     ./user.nix
     ./virt-manager.nix
+    ./vscode.nix
     # ./zram.nix
   ];
 }
