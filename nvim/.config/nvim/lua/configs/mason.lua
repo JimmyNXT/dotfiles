@@ -22,10 +22,6 @@ local options = {
     -- Markdown
     "marksman",
 
-    -- Nix
-    -- "rnix-lsp",
-    -- "nixpkgs-fmt",
-
     -- Java
     -- "jdtls",
 

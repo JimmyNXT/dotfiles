@@ -11,9 +11,11 @@
       llvmPackages_19.clang-tools
       pyright
       perlnavigator
+      marksman
       # python311Packages.python-lsp-server
-      # nixd
+      nixd
       # vimPlugins.nvim-treesitter-parsers.hyprlang
+      lua51Packages.luarocks-nix
     ];
   };
 

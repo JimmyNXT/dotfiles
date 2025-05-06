@@ -80,7 +80,7 @@ lspconfig.perlnavigator.setup{
 }
 
 
-lspconfig.rnix.setup{
+lspconfig.nixd.setup{
   on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,
