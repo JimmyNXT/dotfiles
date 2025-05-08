@@ -58,6 +58,7 @@
 
       modules = [
         ./home-manager/home.nix
+        inputs.stylix.nixosModules.stylix
       ];
     };
   };

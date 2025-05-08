@@ -1,11 +1,12 @@
 { pkgs, ... }:{
-    qt.enable = true;
+    stylix.base16Scheme = ${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml;
+    # qt.enable = true;
 
     # platform theme "gtk" or "gnome"
-    qt.platformTheme = "gtk2";
+    # qt.platformTheme = "gtk2";
 
     # name of the qt theme
-    qt.style = "adwaita-dark";
+    # qt.style = "adwaita-dark";
 
 
     # gtk.enable = true;

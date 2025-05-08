@@ -40,7 +40,6 @@
     xca
     xclip
     zip
-    zsh
 
     #fonts
     font-awesome
@@ -50,15 +49,16 @@
     openjdk23
     nodejs
     python311
+    python311Packages.pip
+    go
+    rustc
+    cargo
 
     # # WM stuff
-    # libsForQt5.xwaylandvideobridge
     libnotify
     # xdg-desktop-portal-gtk
-    # xdg-desktop-portal-hyprland
 
     # # Other
-    # bemoji
-    # nix-prefetch-scripts
+    nix-prefetch-scripts
   ];
 }
