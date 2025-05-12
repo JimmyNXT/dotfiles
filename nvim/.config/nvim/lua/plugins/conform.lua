@@ -17,7 +17,7 @@ return {
         cpp = { "clang-format" },
         c = { "clang-format" },
         go ={"golines"},
-        -- nix = {"nixpkgs-fmt"},
+        nix = {"nixpkgs-fmt"},
       },
       -- format_on_save = {
       --   timeout = 500,

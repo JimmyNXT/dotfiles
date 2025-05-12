@@ -14,12 +14,6 @@
       url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # COMING SOON...
-    #nixvim = {
-    #  url = "github:nix-community/nixvim";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
@@ -38,7 +32,9 @@
       };
 
       modules = [
+        inputs.stylix.nixosModules.stylix
         ./hosts/${hostname}/configuration.nix
+        ./local-packages.nix
       ];
     };
 
@@ -57,8 +53,8 @@
       };
 
       modules = [
+        # inputs.stylix.nixosModules.stylix
         ./home-manager/home.nix
-        inputs.stylix.nixosModules.stylix
       ];
     };
   };

@@ -1,5 +1,5 @@
 { pkgs, ... }:{
-    stylix.base16Scheme = ${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml;
+    stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     # qt.enable = true;
 
     # platform theme "gtk" or "gnome"

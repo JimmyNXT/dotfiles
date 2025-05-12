@@ -21,7 +21,6 @@ lspconfig.rust_analyzer.setup {
   on_init = on_init,
   capabilities = capabilities,
   filetypes = { "rust" },
-  root_dir = lspconfig.util.root_pattern "Cargo.toml",
 }
 
 lspconfig.ts_ls.setup {
@@ -40,7 +39,6 @@ lspconfig.clangd.setup {
   on_init = on_init,
   capabilities = capabilities,
   filetypes = { "c", "cpp" },
-  root_dir = lspconfig.util.root_pattern(".git"),
 }
 
 lspconfig.pyright.setup {
@@ -76,11 +74,9 @@ lspconfig.perlnavigator.setup{
   on_init = on_init,
   capabilities = capabilities,
   filetypes = {'perl'},
-  root_dir = lspconfig.util.root_pattern(".git"),
 }
 
-
-lspconfig.nixd.setup{
+lspconfig.nil_ls.setup{
   on_init = on_init,
   on_attach = on_attach,
   capabilities = capabilities,

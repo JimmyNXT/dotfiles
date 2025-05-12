@@ -12,16 +12,21 @@
       stylua
       typescript-language-server
       vscode-extensions.esbenp.prettier-vscode
-      # prettierd
+      nixpkgs-fmt
+      prettierd
+      shfmt
       eslint_d
-      llvmPackages_19.clang-tools
+      libgcc
       pyright
+      golines
       perlnavigator
+      python311Packages.black
       marksman
-      # python311Packages.python-lsp-server
-      nixd
+      python311Packages.python-lsp-server
+      nil
       # vimPlugins.nvim-treesitter-parsers.hyprlang
       lua51Packages.luarocks-nix
+      python311Packages.pynvim
     ];
   };
 

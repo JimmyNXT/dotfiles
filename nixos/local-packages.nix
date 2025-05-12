@@ -1,5 +1,8 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
-    qemu
+    git
+    vim
+    kdePackages.konsole
+    base16-schemes
   ];
 }
