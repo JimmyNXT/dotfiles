@@ -7,7 +7,6 @@
     ./i3wm.nix
     ./neovim.nix
     ./qemu.nix
-    # ./theme.nix
     ./tmux.nix
     # ./virt-manager.nix
     ./vscode.nix

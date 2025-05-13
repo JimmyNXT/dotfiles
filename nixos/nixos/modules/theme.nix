@@ -1,25 +1,5 @@
 { pkgs, ... }:{
+    stylix.enable = true;
     stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
-    # qt.enable = true;
-
-    # platform theme "gtk" or "gnome"
-    # qt.platformTheme = "gtk2";
-
-    # name of the qt theme
-    # qt.style = "adwaita-dark";
-
-
-    # gtk.enable = true;
-
-    # gtk.cursorTheme.package = pkgs.bibata-cursors;
-    # gtk.cursorTheme.name = "Bibata-Modern-Ice";
-
-    # gtk.theme.package = pkgs.adw-gtk3;
-    # gtk.theme.name = "adw-gtk3";
-
-    # gtk.iconTheme.package = gruvboxPlus;
-    # gtk.iconTheme.name = "GruvboxPlus";
-
-    # gtk.cursorTheme.package = pkgs.bibata-cursors;
-    # gtk.cursorTheme.name = "Bibata-Modern-Ice";
+    stylix.image = ../../../i3/.config/i3/desktop.jpg;
 }
