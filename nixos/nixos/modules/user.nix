@@ -4,8 +4,9 @@
   users = {
     defaultUserShell = pkgs.zsh;
     users.${user} = {
+      useDefaultShell = true;
       isNormalUser = true;
-      extraGroups = [ "wheel" "networkmanager" "libvirtd"];
+      extraGroups = [ "wheel" "networkmanager" "libvirtd" "dialout"];
     };
   };
 }

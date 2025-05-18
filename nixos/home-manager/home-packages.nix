@@ -30,7 +30,8 @@
     ntfs3g
     oh-my-zsh
     openocd
-    platformio-core
+    platformio
+    avrdude
     pulseaudio
     ripgrep
     stow

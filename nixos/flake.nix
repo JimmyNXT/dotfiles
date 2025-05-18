@@ -3,7 +3,13 @@
 
   inputs = {
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs ={
+      url = "github:nixos/nixpkgs/nixos-24.11";
+    };
+
+    nixpkgs-unstable = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -16,7 +22,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, stylix, ... }@inputs: let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     user = "jimmynxt";
@@ -50,6 +56,7 @@
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
         inherit inputs homeStateVersion user;
+        pkgs-unstable = import nixpkgs-unstable { system = "${system}"; };
       };
 
       modules = [

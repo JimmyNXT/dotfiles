@@ -12,5 +12,4 @@
             source = ../../../../zsh/.oh-my-zsh/themes/jimmynxt.zsh-theme;
         };
     };
-
 }
