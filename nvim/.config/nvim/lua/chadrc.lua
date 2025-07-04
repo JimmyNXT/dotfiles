@@ -8,8 +8,11 @@ M.ui = {
   tabufline = {
     lazyload = false,
   },
+}
+
+M.base46 = {
   hl_override = highlights.override,
-  hl_add = highlights.add,
+  hl_add = highlights.add
 }
 
 if not os.getenv "TMUX" then
