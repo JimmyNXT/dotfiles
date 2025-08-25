@@ -34,9 +34,8 @@ export PATH=$PATH:/usr/local/go/bin
 
 export ANDROID_HOME=${HOME}/Android/Sdk
 
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='ls -Fp --color=auto'
+alias la='ls -Fp --color=auto -al'
 alias tmux='tmux -u'
 alias android_studio='/usr/local/android-studio/bin/studio.sh'
 alias calc='f() { echo $1 | bc };f'
