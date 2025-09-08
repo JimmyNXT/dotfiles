@@ -1,20 +1,19 @@
 return {
-  "williamboman/mason.nvim",
+  'williamboman/mason.nvim',
   dependencies = {
-			"williamboman/mason-lspconfig.nvim",
-			"neovim/nvim-lspconfig",
-			"hrsh7th/nvim-cmp",
-		},  
+    'williamboman/mason-lspconfig.nvim',
+    'neovim/nvim-lspconfig',
+    'hrsh7th/nvim-cmp',
+  },
   opts = function()
-    return require "configs.mason"
+    return require 'configs.mason'
   end,
   config = function(_, opts)
-    dofile(vim.g.base46_cache .. "mason")
-    require("mason").setup(opts)
+    require('mason').setup(opts)
 
-    vim.api.nvim_create_user_command("MasonInstallAll", function()
+    vim.api.nvim_create_user_command('MasonInstallAll', function()
       if opts.ensure_installed and #opts.ensure_installed > 0 then
-        vim.cmd("MasonInstall " .. table.concat(opts.ensure_installed, " "))
+        vim.cmd('MasonInstall ' .. table.concat(opts.ensure_installed, ' '))
       end
     end, {})
 

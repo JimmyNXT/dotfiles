@@ -1,30 +1,56 @@
-vim.api.nvim_create_autocmd({ "VimEnter" }, {
-  callback = function(data)
-    -- buffer is a real file on the disk
-    local real_file = vim.fn.filereadable(data.file) == 1
-
-    -- buffer is a [No Name]
-    local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
-
-    if not real_file and not no_name then
-      return
-    end
-
-    -- local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
-    --
-    -- if not no_name then
-    --   return
-    -- end
-
-    require("nvim-tree.api").tree.toggle { focus = true, find_file = true }
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.hl.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-    pattern = {"*"},
-    callback = function()
-      local save_cursor = vim.fn.getpos(".")
-      pcall(function() vim.cmd [[%s/\s\+$//e]] end)
-      vim.fn.setpos(".", save_cursor)
-    end,
-})
+local check_version = function()
+  local verstr = tostring(vim.version())
+  if not vim.version.ge then
+    vim.health.error(string.format("Neovim out of date: '%s'. Upgrade to latest stable or nightly", verstr))
+    return
+  end
+
+  if vim.version.ge(vim.version(), '0.10-dev') then
+    vim.health.ok(string.format("Neovim version is: '%s'", verstr))
+  else
+    vim.health.error(string.format("Neovim out of date: '%s'. Upgrade to latest stable or nightly", verstr))
+  end
+end
+
+local check_external_reqs = function()
+  -- Basic utils: `git`, `make`, `unzip`
+  for _, exe in ipairs { 'git', 'make', 'unzip', 'rg' } do
+    local is_executable = vim.fn.executable(exe) == 1
+    if is_executable then
+      vim.health.ok(string.format("Found executable: '%s'", exe))
+    else
+      vim.health.warn(string.format("Could not find executable: '%s'", exe))
+    end
+  end
+
+  return true
+end
+
+return {
+  check = function()
+    vim.health.start 'kickstart.nvim'
+
+    vim.health.info [[NOTE: Not every warning is a 'must-fix' in `:checkhealth`
+
+  Fix only warnings for plugins and languages you intend to use.
+    Mason will give warnings for languages that are not installed.
+    You do not need to install, unless you want to use those languages!]]
+
+    local uv = vim.uv or vim.loop
+    vim.health.info('System Information: ' .. vim.inspect(uv.os_uname()))
+
+    check_version()
+    check_external_reqs()
+  end,
+}

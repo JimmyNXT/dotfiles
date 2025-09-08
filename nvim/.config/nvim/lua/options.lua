@@ -1,70 +1,82 @@
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-local opt = vim.opt
-local o = vim.o
-local g = vim.g
-local wo = vim.wo
+-- Set to true if you have a Nerd Font installed and selected in the terminal
+vim.g.have_nerd_font = true
 
--------------------------------------- options ------------------------------------------
-o.laststatus = 3
-o.showmode = false
+-- [[ Setting options ]]
+-- See `:help vim.o`
+-- NOTE: You can change these options as you wish!
+--  For more options, you can see `:help option-list`
 
-o.clipboard = "unnamedplus"
-o.cursorline = true
-o.cursorlineopt = "number"
+-- Make line numbers default
+vim.o.number = true
+-- You can also add relative line numbers, to help with jumping.
+--  Experiment for yourself to see if you like it!
+-- vim.o.relativenumber = true
 
--- Indenting
-o.expandtab = true
-o.shiftwidth = 2
-o.smartindent = true
-o.tabstop = 2
-o.softtabstop = 2
+-- Enable mouse mode, can be useful for resizing splits for example!
+vim.o.mouse = 'a'
 
-opt.fillchars = { eob = " " }
-o.ignorecase = true
-o.smartcase = true
-o.mouse = "a"
+-- Don't show the mode, since it's already in the status line
+vim.o.showmode = false
 
--- Numbers
-o.number = true
-o.numberwidth = 2
-o.ruler = false
+-- Sync clipboard between OS and Neovim.
+--  Schedule the setting after `UiEnter` because it can increase startup-time.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
 
--- disable nvim intro
-opt.shortmess:append "sI"
+-- Enable break indent
+vim.o.breakindent = true
 
-o.signcolumn = "yes"
-o.splitbelow = true
-o.splitright = true
-o.timeoutlen = 400
-o.undofile = true
+-- Save undo history
+vim.o.undofile = true
 
--- interval for writing swap file to disk, also used by gitsigns
-o.updatetime = 250
+-- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+vim.o.ignorecase = true
+vim.o.smartcase = true
 
--- go to previous/next line with h,l,left arrow and right arrow
--- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
+-- Keep signcolumn on by default
+vim.o.signcolumn = 'yes'
 
--- disable some default providers
-g.loaded_node_provider = 0
--- g.loaded_python3_provider = 0
-g.loaded_perl_provider = 0
-g.loaded_ruby_provider = 0
+-- Decrease update time
+vim.o.updatetime = 250
 
--- add binaries installed by mason.nvim to path
-local is_windows = vim.fn.has "win32" ~= 0
-local sep = is_windows and "\\" or "/"
-local delim = is_windows and ";" or ":"
-vim.env.PATH = table.concat({ vim.fn.stdpath "data", "mason", "bin" }, sep) .. delim .. vim.env.PATH
+-- Decrease mapped sequence wait time
+vim.o.timeoutlen = 300
 
+-- Configure how new splits should be opened
+vim.o.splitright = true
+vim.o.splitbelow = true
 
-opt.spelllang = "en_gb"
-opt.spell = true
-opt.guifont= "SauceCodePro NF SemiBold"
-opt.virtualedit="block"
-wo.relativenumber = false
-opt.scrolloff = 10
-opt.sidescrolloff = 8
+-- Sets how neovim will display certain whitespace characters in the editor.
+--  See `:help 'list'`
+--  and `:help 'listchars'`
+--
+--  Notice listchars is set using `vim.opt` instead of `vim.o`.
+--  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
+--   See `:help lua-options`
+--   and `:help lua-options-guide`
+-- vim.o.list = true
+-- vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
-g.python3_host_prog = '/usr/bin/python3'
+-- Preview substitutions live, as you type!
+vim.o.inccommand = 'split'
 
+-- Show which line your cursor is on
+vim.o.cursorline = true
+
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.o.scrolloff = 10
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.o.confirm = true
+vim.o.tabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.softtabstop = 4

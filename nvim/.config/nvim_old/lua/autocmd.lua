@@ -1,0 +1,30 @@
+vim.api.nvim_create_autocmd({ "VimEnter" }, {
+  callback = function(data)
+    -- buffer is a real file on the disk
+    local real_file = vim.fn.filereadable(data.file) == 1
+
+    -- buffer is a [No Name]
+    local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+
+    if not real_file and not no_name then
+      return
+    end
+
+    -- local no_name = data.file == "" and vim.bo[data.buf].buftype == ""
+    --
+    -- if not no_name then
+    --   return
+    -- end
+
+    require("nvim-tree.api").tree.toggle { focus = true, find_file = true }
+  end,
+})
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+    pattern = {"*"},
+    callback = function()
+      local save_cursor = vim.fn.getpos(".")
+      pcall(function() vim.cmd [[%s/\s\+$//e]] end)
+      vim.fn.setpos(".", save_cursor)
+    end,
+})
