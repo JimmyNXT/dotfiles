@@ -47,7 +47,7 @@ return {
       lualine_c = {
         {
           'filename',
-          path = 2, -- Set path to 2 for full path
+          path = 1, -- Set path to 2 for full path
         },
       },
       lualine_x = { 'diagnostics', 'lsp_status', 'filetype' },
