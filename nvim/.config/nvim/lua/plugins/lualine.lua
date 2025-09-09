@@ -1,8 +1,8 @@
 local function time()
-  return os.date ' %H:%M '
+  return os.date '%H:%M'
 end
 local function date()
-  return os.date ' %d/%m/%Y '
+  return os.date '%d/%m/%Y'
 end
 
 return {
@@ -21,7 +21,7 @@ return {
       ignore_focus = {},
       always_divide_middle = true,
       always_show_tabline = true,
-      globalstatus = false,
+      globalstatus = true,
       refresh = {
         statusline = 1000,
         tabline = 1000,
@@ -44,9 +44,14 @@ return {
     sections = {
       lualine_a = { 'mode' },
       lualine_b = { 'branch', 'diff', 'diagnostics' },
-      lualine_c = { 'filename' },
+      lualine_c = {
+        {
+          'filename',
+          path = 2, -- Set path to 2 for full path
+        },
+      },
       lualine_x = { 'diagnostics', 'lsp_status', 'filetype' },
-      lualine_y = { 'location' },
+      lualine_y = { 'progress' },
       lualine_z = { time },
     },
     inactive_sections = {
