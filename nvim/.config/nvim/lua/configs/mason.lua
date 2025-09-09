@@ -35,6 +35,9 @@ local options = {
 
     --Spelling
     "codespell",
+
+    -- Make
+    "checkmake",
   },
 }
 
