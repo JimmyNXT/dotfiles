@@ -197,10 +197,11 @@ return {
 
       html = {},
       cssls = {},
+      eslint = {},
 
-      rust_analyzer = {
-        filetypes = { 'rust' },
-      },
+      -- rust_analyzer = {
+      --   filetypes = { 'rust' },
+      -- },
       ts_ls = {
         init_options = {
           preferences = {
@@ -211,8 +212,8 @@ return {
       clangd = { filetypes = { 'c', 'cpp' } },
 
       pyright = { filetypes = { 'python' } },
-      marksman = { filetypes = { 'markdown', 'markdown.mdx' } },
-      gopls = { filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' } },
+      -- marksman = { filetypes = { 'markdown', 'markdown.mdx' } },
+      -- gopls = { filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' } },
 
       bashls = { filetypes = { 'bash', 'sh', 'zsh', 'ksh', 'csh' } },
       -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -223,22 +224,22 @@ return {
       -- But for many setups, the LSP (`ts_ls`) will work just fine
       --
       perlnavigator = { filetypes = { 'perl' } },
-      nil_ls = { filetypes = { 'nix' } },
+      -- nil_ls = { filetypes = { 'nix' } },
 
-      lua_ls = {
-        -- cmd = { ... },
-        -- filetypes = { ... },
-        -- capabilities = {},
-        settings = {
-          Lua = {
-            completion = {
-              callSnippet = 'Replace',
-            },
-            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-            -- diagnostics = { disable = { 'missing-fields' } },
-          },
-        },
-      },
+      -- lua_ls = {
+      --   -- cmd = { ... },
+      --   -- filetypes = { ... },
+      --   -- capabilities = {},
+      --   settings = {
+      --     Lua = {
+      --       completion = {
+      --         callSnippet = 'Replace',
+      --       },
+      --       -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+      --       -- diagnostics = { disable = { 'missing-fields' } },
+      --     },
+      --   },
+      -- },
     }
 
     -- Ensure the servers and tools above are installed
@@ -259,33 +260,30 @@ return {
       'stylua', -- Used to format Lua code
       'lua-language-server',
 
-      -- web dev stuff
-      'css-lsp',
-      'html-lsp',
-      'typescript-language-server',
-
       'prettier',
       'eslint_d',
 
-      -- c/cpp stuff
+      -- -- c/cpp stuff
       -- "clangd",
-      'clang-format',
-      'eslint-lsp',
+      -- 'clang-format',
+
+      -- Python stuff
       'black',
 
-      -- Java
+      -- -- Java
       -- "jdtls",
 
-      -- GO
-      'golines',
-      'gospel',
+      -- -- GO
+      -- 'golines',
+      -- 'gospel',
 
       --Spelling
-      'codespell',
+      -- 'codespell',
 
       -- Make
-      'checkmake',
+      -- 'checkmake',
       'shfmt',
+      -- 'nixpkgs-fmt',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

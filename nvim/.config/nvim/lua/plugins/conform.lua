@@ -13,6 +13,7 @@ return { -- Autoformat
     },
   },
   opts = {
+    lsp_fallback = true,
     notify_on_error = false,
     format_on_save = false,
     -- function(bufnr)
@@ -42,7 +43,7 @@ return { -- Autoformat
       cpp = { 'clang-format' },
       c = { 'clang-format' },
       go = { 'golines' },
-      -- nix = { 'nixpkgs-fmt' },
+      nix = { 'nixpkgs-fmt' },
     },
   },
 }
