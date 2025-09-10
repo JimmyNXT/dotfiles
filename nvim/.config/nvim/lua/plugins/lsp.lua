@@ -267,8 +267,8 @@ return {
       -- "clangd",
       -- 'clang-format',
 
-      -- Python stuff
-      'black',
+      -- -- Python stuff
+      -- 'black',
 
       -- -- Java
       -- "jdtls",
@@ -282,7 +282,7 @@ return {
 
       -- Make
       -- 'checkmake',
-      'shfmt',
+      -- 'shfmt',
       -- 'nixpkgs-fmt',
     })
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
