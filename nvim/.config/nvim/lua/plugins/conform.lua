@@ -44,6 +44,7 @@ return { -- Autoformat
       c = { 'clang-format' },
       go = { 'golines' },
       nix = { 'nixpkgs-fmt' },
+      markdown = { 'prettier' },
     },
   },
 }
