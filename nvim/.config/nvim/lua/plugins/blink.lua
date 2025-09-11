@@ -57,7 +57,17 @@ return { -- Autocompletion
       --
       -- See :h blink-cmp-config-keymap for defining your own keymap
       preset = 'default',
-      ['<CR>'] = { 'select_and_accept', 'fallback' },
+      ['<CR>'] = {
+        function(cmp)
+          if cmp.is_menu_visible() then
+            cmp.select_and_accept()
+            return true
+          end
+        end,
+        'fallback',
+      },
+      ['<Right>'] = { 'select_and_accept', 'fallback' },
+      ['<Tab>'] = { 'select_and_accept', 'fallback' },
 
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
       --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -72,7 +82,19 @@ return { -- Autocompletion
     completion = {
       -- By default, you may press `<c-space>` to show the documentation.
       -- Optionally, set `auto_show = true` to show the documentation after a delay.
-      documentation = { auto_show = false, auto_show_delay_ms = 500 },
+      documentation = {
+        auto_show = false,
+        -- auto_show_delay_ms = 500,
+        window = { border = 'single' },
+      },
+      menu = {
+        auto_show = false,
+        border = 'single',
+      },
+      ghost_text = {
+        enabled = true,
+        show_with_menu = false,
+      },
     },
 
     sources = {
@@ -94,6 +116,6 @@ return { -- Autocompletion
     fuzzy = { implementation = 'lua' },
 
     -- Shows a signature help window while you type arguments for a function
-    signature = { enabled = true },
+    signature = { enabled = true, window = { border = 'single' } },
   },
 }
