@@ -178,6 +178,10 @@ return {
       },
     }
 
+    local function is_freeBSD()
+      return vim.loop.os_uname().sysname == 'FreeBSD'
+    end
+
     -- LSP servers and clients are able to communicate to each other what features they support.
     --  By default, Neovim doesn't support everything that is in the LSP specification.
     --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
@@ -199,9 +203,6 @@ return {
       cssls = {},
       eslint = {},
 
-      -- rust_analyzer = {
-      --   filetypes = { 'rust' },
-      -- },
       ts_ls = {
         init_options = {
           preferences = {
@@ -209,38 +210,36 @@ return {
           },
         },
       },
-      clangd = { filetypes = { 'c', 'cpp' } },
 
       pyright = { filetypes = { 'python' } },
-      -- marksman = { filetypes = { 'markdown', 'markdown.mdx' } },
-      -- gopls = { filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' } },
 
       bashls = { filetypes = { 'bash', 'sh', 'zsh', 'ksh', 'csh' } },
-      -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-      --
-      -- Some languages (like typescript) have entire language plugins that can be useful:
-      --    https://github.com/pmizio/typescript-tools.nvim
-      --
-      -- But for many setups, the LSP (`ts_ls`) will work just fine
-      --
       perlnavigator = { filetypes = { 'perl' } },
-      -- nil_ls = { filetypes = { 'nix' } },
-
-      -- lua_ls = {
-      --   -- cmd = { ... },
-      --   -- filetypes = { ... },
-      --   -- capabilities = {},
-      --   settings = {
-      --     Lua = {
-      --       completion = {
-      --         callSnippet = 'Replace',
-      --       },
-      --       -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-      --       -- diagnostics = { disable = { 'missing-fields' } },
-      --     },
-      --   },
-      -- },
     }
+    if not is_freeBSD() then
+      servers.clangd = { filetypes = { 'c', 'cpp' } }
+      servers.rust_analyzer = {
+        filetypes = { 'rust' },
+      }
+      servers.marksman = { filetypes = { 'markdown', 'markdown.mdx' } }
+      servers.gopls = { filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' } }
+      servers.nil_ls = { filetypes = { 'nix' } }
+
+      servers.lua_ls = {
+        -- cmd = { ... },
+        -- filetypes = { ... },
+        -- capabilities = {},
+        settings = {
+          Lua = {
+            completion = {
+              callSnippet = 'Replace',
+            },
+            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+            -- diagnostics = { disable = { 'missing-fields' } },
+          },
+        },
+      }
+    end
 
     -- Ensure the servers and tools above are installed
     --
@@ -257,36 +256,56 @@ return {
     -- for you, so that they are available from within Neovim.
     local ensure_installed = vim.tbl_keys(servers or {})
     vim.list_extend(ensure_installed, {
-      'stylua', -- Used to format Lua code
-      'lua-language-server',
-
       'prettier',
       'eslint_d',
-
-      -- -- c/cpp stuff
-      -- "clangd",
-      -- 'clang-format',
-
-      -- -- Python stuff
-      -- 'black',
-
-      -- -- Java
-      -- "jdtls",
-
-      -- -- GO
-      -- 'golines',
-      -- 'gospel',
-
-      --Spelling
-      -- 'codespell',
-
-      -- Make
-      -- 'checkmake',
-      -- 'shfmt',
-      -- 'nixpkgs-fmt',
     })
+    if not is_freeBSD() then
+      vim.list_extend(ensure_installed, {
+        'stylua', -- Used to format Lua code
+        'lua-language-server',
+
+        -- c/cpp stuff
+        'clangd',
+        'clang-format',
+
+        -- Python stuff
+        'black',
+
+        -- Java
+        -- "jdtls",
+
+        -- GO
+        'golines',
+        'gospel',
+
+        -- Spelling
+        'codespell',
+
+        -- Make
+        'checkmake',
+        'shfmt',
+        'nixpkgs-fmt',
+      })
+    end
     require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
+    if is_freeBSD() then
+      servers.clangd = { filetypes = { 'c', 'cpp' } }
+      servers.lua_ls = {
+        -- cmd = { ... },
+        -- filetypes = { ... },
+        -- capabilities = {},
+        settings = {
+          Lua = {
+            completion = {
+              callSnippet = 'Replace',
+            },
+            -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+            -- diagnostics = { disable = { 'missing-fields' } },
+          },
+        },
+      }
+    end
     require('mason-lspconfig').setup {
       ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
       automatic_installation = false,
