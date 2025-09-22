@@ -74,12 +74,16 @@ return { -- Autocompletion
     },
 
     appearance = {
-      -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-      -- Adjusts spacing to ensure icons are aligned
       nerd_font_variant = 'mono',
     },
 
     completion = {
+      list = {
+        selection = {
+          preselect = true,
+          --  auto_insert = true
+        },
+      },
       -- By default, you may press `<c-space>` to show the documentation.
       -- Optionally, set `auto_show = true` to show the documentation after a delay.
       documentation = {
@@ -90,6 +94,7 @@ return { -- Autocompletion
       menu = {
         auto_show = false,
         border = 'single',
+        draw = { columns = { { "kind_icon", "label", "label_description", gap = 1 }, {  "kind" } }, },
       },
       ghost_text = {
         enabled = true,
@@ -98,7 +103,7 @@ return { -- Autocompletion
     },
 
     sources = {
-      default = { 'lsp', 'path', 'snippets', 'lazydev' },
+      default = { 'lsp', 'path', 'snippets', 'lazydev', 'buffer' },
       providers = {
         lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
       },
