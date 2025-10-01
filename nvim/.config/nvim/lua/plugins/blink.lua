@@ -66,7 +66,7 @@ return { -- Autocompletion
         end,
         'fallback',
       },
-      ['<Right>'] = { 'select_and_accept', 'fallback' },
+      -- ['<Right>'] = { 'select_and_accept', 'fallback' },
       ['<Tab>'] = { 'select_and_accept', 'fallback' },
 
       -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
