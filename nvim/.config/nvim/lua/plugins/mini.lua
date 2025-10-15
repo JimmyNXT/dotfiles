@@ -4,10 +4,10 @@ return {
     require('mini.notify').setup()
     require('mini.comment').setup {
       mappings = {
-        comment = '<C-/>',
-        comment_line = '<C-/>',
-        comment_visual = '<C-/>',
-        textobject = '<C-/>',
+        comment = '<C-_>', -- this is <C-/> as a shortcut
+        comment_line = '<C-_>', -- this is <C-/> as a shortcut
+        comment_visual = '<C-_>', -- this is <C-/> as a shortcut
+        textobject = '<C-_>', -- this is <C-/> as a shortcut
       },
     }
     --   -- Better Around/Inside textobjects
