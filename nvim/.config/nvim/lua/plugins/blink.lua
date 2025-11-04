@@ -94,7 +94,7 @@ return { -- Autocompletion
       menu = {
         auto_show = false,
         border = 'single',
-        draw = { columns = { { "kind_icon", "label", "label_description", gap = 1 }, {  "kind" } }, },
+        draw = { columns = { { 'kind_icon', 'label', 'label_description', gap = 1 }, { 'kind' } } },
       },
       ghost_text = {
         enabled = true,
