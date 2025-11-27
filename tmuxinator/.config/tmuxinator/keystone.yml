@@ -1,0 +1,51 @@
+name: keystone
+root: ~/
+
+windows:
+  - run:
+      layout: tiled
+      panes:
+        - backend:
+          - cd ~/git/KeyStone/pki_backend
+          - make dev-run
+        - socket:
+          - cd ~/git/KeyStone/pki_backend
+          - make dev-run-socket
+        - scratch:
+          - cd ~/
+        - frontend:
+          - cd ~/git/KeyStone/pki_frontend
+          - yarn ra start
+  - logs: 
+      layout: tiled
+      panes:
+        - sudo tail -f /var/log/backend/pki_backend.log
+        - sudo tail -f /var/log/backend/pki_backend_ws.log
+        - sudo tail -f /var/log/uwsgi.log
+        - sudo tail -f /var/log/celery/celery.log
+        - sudo tail -f /var/log/celery/beat.log
+        - sudo tail -f /var/log/device.log
+  - backend:
+      layout: tiled
+      panes:
+        - backend:
+          - cd ~/git/KeyStone/pki_backend
+          - nvim
+  - shared:
+      layout: tiled
+      panes:
+        - backend:
+          - cd ~/git/KeyStone/Keystone-Shared
+          - nvim
+  - frontend:
+      layout: tiled
+      panes:
+        - backend:
+          - cd ~/git/KeyStone/pki_frontend
+          - nvim
+  - scripts:
+      layout: tiled
+      panes:
+        - backend:
+          - cd ~/git/dem/Keystone-Scripts
+          - nvim
