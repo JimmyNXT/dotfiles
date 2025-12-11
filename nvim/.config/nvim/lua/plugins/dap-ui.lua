@@ -29,7 +29,7 @@ return {
             {
                 elements = {
                     { id = 'repl', size = 0.5 },
-                    { id = 'console', size = 0.5 },
+                    -- { id = 'console', size = 0.5 },
                 },
                 size = 20, -- height for bottom, width for left/right
                 position = 'bottom',
