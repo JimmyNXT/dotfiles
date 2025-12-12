@@ -1,4 +1,4 @@
-local function is_freeBSD()
+local is_freeBSD = function ()
     return vim.loop.os_uname().sysname == 'FreeBSD'
 end
 
