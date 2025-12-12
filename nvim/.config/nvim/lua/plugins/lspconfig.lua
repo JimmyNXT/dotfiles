@@ -227,7 +227,8 @@ return {
         for server_name, settings in pairs(servers) do
             local server = servers[server_name] or {}
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            require('lspconfig')[server_name].setup(settings)
+            vim.lsp.config(server_name, settings)
+            vim.lsp.enable(server_name, true)
         end
     end,
 }
