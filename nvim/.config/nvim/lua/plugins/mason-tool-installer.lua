@@ -26,8 +26,7 @@ return {
                 'clangd',
                 'rust_analyzer',
                 'marksman',
-                'gopls',
-                'nil_ls',
+                -- 'nil_ls',
                 'lua_ls',
                 'stylua',
 
@@ -41,8 +40,9 @@ return {
                 -- "jdtls",
 
                 -- GO
-                'golines',
-                'gospel',
+                -- 'gopls',
+                -- 'golines',
+                -- 'gospel',
 
                 -- Spelling
                 'codespell',
