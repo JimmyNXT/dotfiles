@@ -1,0 +1,96 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 10000
+  },
+  "watcher": {
+    "ignore": ["node_modules/**", "dist/**", ".git/**", ".venv/**"]
+  },
+  "plugin": ["@tarquinen/opencode-dcp@latest"],
+  "provider": {
+    "Host - Llama.cpp": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Local - Llama.cpp",
+      "options": {
+        "baseURL": "http://host.docker.internal:11434/v1"
+      },
+      "models": {
+        "Model": {
+          "name": "Model"
+        }
+      }
+    },
+    "Beast - Qwen 35": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Beast - Qwen 35",
+      "options": {
+        "baseURL": "http://192.168.8.10:11434/v1"
+      },
+      "models": {
+        "Model": {
+          "name": "Model",
+          "limit": {
+            "context": 65536,
+            "output": 8000
+          }
+        }
+      }
+    },
+    "Beast - Qwen 4": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Beast - Qwen 4",
+      "options": {
+        "baseURL": "http://192.168.8.10:11435/v1"
+      },
+      "models": {
+        "Model": {
+          "name": "Model",
+          "limit": {
+            "context": 65536,
+            "output": 8000
+          }
+        }
+      }
+    }
+  },
+  "permission": {
+    "bash": "allow",
+    "edit": "allow",
+    "read": "allow",
+    "grep": "allow",
+    "glob": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "patch": "allow",
+    "skill": "allow",
+    "todowrite": "allow",
+    "todoread": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "question": "allow"
+  },
+  "agent": {
+    "explore": {
+      "model": "Beast - Qwen 4/Model"
+    },
+    "build": {
+      "model": "Beast - Qwen 35/Model"
+    },
+    "plan": {
+      "model": "Beast - Qwen 35/Model"
+    }
+  },
+  "mcp": {
+    "rfc-server": {
+      "type": "local",
+      "command": ["npx", "-y", "@mjpitz/mcp-rfc"],
+      "enabled": true
+    }
+  },
+  "plugin": [
+    "@tarquinen/opencode-dcp@latest",
+    "@franlol/opencode-md-table-formatter@latest"
+  ]
+}

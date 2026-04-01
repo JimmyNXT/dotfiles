@@ -1,4 +1,4 @@
-FROM ghcr.io/anomalyco/opencode:1.3.2
+FROM ghcr.io/anomalyco/opencode:latest
 
 
 RUN apk add --no-cache nodejs=24.14.1-r0
