@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# build-and-run.sh — builds the image with your host UID/GID then launches it
+
+set -euo pipefail
+
+IMAGE_NAME="opencode-local"
+
+# ── 1. Build ──────────────────────────────────────────────────────────────────
+docker build \
+  --build-arg UID="$(id -u)" \
+  --build-arg GID="$(id -g)" \
+  -t "${IMAGE_NAME}" \
+  "$(dirname "$0")"
+
+# ── 2. Run ────────────────────────────────────────────────────────────────────
+docker run --rm -it \
+  --user "$(id -u):$(id -g)" \
+  --add-host host.docker.internal:host-gateway \
+  --volume "$(pwd):/workspace" \
+  --workdir /workspace \
+  --volume "${HOME}/.local/share/opencode:/home/hostuser/.local/share/opencode" \
+  --volume "${HOME}/.local/state/opencode:/home/hostuser/.local/state/opencode" \
+  --volume "${HOME}/.cache/opencode:/home/hostuser/.cache/opencode" \
+  --volume "${HOME}/.config/opencode/agents:/home/hostuser/.config/opencode/agents" \
+  --volume "${HOME}/.config/opencode/command:/home/hostuser/.config/opencode/command" \
+  --volume "${HOME}/.config/opencode/skills:/home/hostuser/.config/opencode/skills" \
+  --volume "${HOME}/.config/opencode/dcp.jsonc:/home/hostuser/.config/opencode/dcp.jsonc" \
+  --volume "${HOME}/.config/opencode/opencode.json:/home/hostuser/.config/opencode/opencode.json" \
+  "${IMAGE_NAME}"
