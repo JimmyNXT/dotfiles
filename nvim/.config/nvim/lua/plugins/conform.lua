@@ -45,6 +45,7 @@ return { -- Autoformat
       go = { 'golines' },
       nix = { 'nixpkgs-fmt' },
       markdown = { 'prettier' },
+      rust = { "rustfmt", lsp_format = "fallback" },
     },
   },
 }

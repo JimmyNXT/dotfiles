@@ -12,8 +12,21 @@ docker build \
   -t "${IMAGE_NAME}" \
   "$(dirname "$0")"
 
+# ── 1.5. Ensure host dirs exist ───────────────────────────────────────────────
+mkdir -p "${HOME}/.local/share/opencode"
+mkdir -p "${HOME}/.local/share/opencode/log"
+mkdir -p "${HOME}/.local/state/opencode"
+mkdir -p "${HOME}/.local/state/opencode/locks"
+mkdir -p "${HOME}/.cache/opencode/bin"
+mkdir -p "${HOME}/.config/opencode/agents"
+mkdir -p "${HOME}/.config/opencode/command"
+mkdir -p "${HOME}/.config/opencode/skills"
+
+touch "${HOME}/.config/opencode/dcp.jsonc"
+touch "${HOME}/.config/opencode/opencode.json"
+
 # ── 2. Run ────────────────────────────────────────────────────────────────────
-docker run --rm -it \
+docker run --rm -it --network ai-net \
   --user "$(id -u):$(id -g)" \
   --add-host host.docker.internal:host-gateway \
   --volume "$(pwd):/workspace" \

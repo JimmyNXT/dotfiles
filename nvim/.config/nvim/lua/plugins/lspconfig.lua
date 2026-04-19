@@ -203,7 +203,8 @@ return {
         if not is_freeBSD() then
             servers.clangd = { filetypes = { 'c', 'cpp' } }
             servers.rust_analyzer = {
-                filetypes = { 'rust' },
+                -- filetypes = { 'rust' },
+                filetypes = { 'rust', 'rust-analyzer' },
             }
             servers.marksman = { filetypes = { 'markdown', 'markdown.mdx' } }
             servers.gopls = { filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' } }
@@ -226,9 +227,11 @@ return {
 
         for server_name, settings in pairs(servers) do
             local server = servers[server_name] or {}
-            server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-            vim.lsp.config(server_name, settings)
-            vim.lsp.enable(server_name, true)
+            -- Set capabilities using blink.cmp's LSP capabilities
+            vim.lsp.handlers.set(server_name, {
+                capabilities = capabilities,
+                file_type_aliases = { ['rust'] = 'rust-analyzer' },
+            })
         end
     end,
 }

@@ -18,6 +18,6 @@ if vim.fn.isdirectory(vim.loop.os_homedir() .. '/vaults/personal/') == 1 then
         end,
     }
 else
-    vim.notify("No Obsidian")
+    vim.notify 'No Obsidian'
     return {}
 end

@@ -1,7 +1,3 @@
-local is_freeBSD = function ()
-    return vim.loop.os_uname().sysname == 'FreeBSD'
-end
-
 return {
     'WhoIsSethDaniel/mason-tool-installer.nvim',
     dependencies = {
@@ -21,7 +17,7 @@ return {
         }
 
         -- LSP Servers that should only be installed on not FreeBSD
-        if not is_freeBSD() then
+        if not vim.g.is_freeBSD and not vim.g.is_nixos then
             vim.list_extend(ensure_installed, {
                 'clangd',
                 'rust_analyzer',

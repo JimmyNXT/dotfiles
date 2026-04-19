@@ -1,10 +1,7 @@
 FROM ghcr.io/anomalyco/opencode:latest
 
 
-RUN apk add --no-cache nodejs=24.14.1-r0
-RUN apk add --no-cache npm=11.11.0-r0
-RUN apk add --no-cache python3=3.12.12-r0
-RUN apk add --no-cache vim
+RUN apk add --no-cache nodejs npm python3 py3-pip vim
 
 ARG UID=1000
 ARG GID=1000
@@ -22,8 +19,9 @@ RUN mkdir -p /home/hostuser \
 
 # Create XDG dirs the app needs, all owned by the host user
 RUN mkdir -p /home/hostuser/.local \
-             /home/hostuser/.config/opencode \
- && chown -R "${UID}:${GID}" /home/hostuser
+    && mkdir -p /home/hostuser/.config/opencode \
+    && mkdir -p /home/hostuser/.cache/opencode/bin \
+    && chown -R "${UID}:${GID}" /home/hostuser
 
 ENV HOME=/home/hostuser \
     TZ=Africa/Johannesburg

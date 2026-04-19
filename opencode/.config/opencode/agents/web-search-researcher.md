@@ -1,7 +1,6 @@
 ---
 description: Used to perform web searches from a URL and analyze the contents based on a query.
 mode: subagent
-model: Beast - Qwen 4/Model
 temperature: 0.1
 tools:
   read: true

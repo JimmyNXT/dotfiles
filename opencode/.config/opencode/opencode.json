@@ -10,45 +10,178 @@
   },
   "plugin": ["@tarquinen/opencode-dcp@latest"],
   "provider": {
-    "Host - Llama.cpp": {
+    "Local - 11434": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Local - Llama.cpp",
+      "name": "Local - 11434",
       "options": {
-        "baseURL": "http://host.docker.internal:11434/v1"
+        "baseURL": "http://localhost:11434/v1"
       },
       "models": {
-        "Model": {
-          "name": "Model"
-        }
-      }
-    },
-    "Beast - Qwen 35": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "Beast - Qwen 35",
-      "options": {
-        "baseURL": "http://192.168.8.10:11434/v1"
-      },
-      "models": {
-        "Model": {
-          "name": "Model",
+        "16k": {
+          "name": "16k",
+          "limit": {
+            "context": 16384,
+            "output": 8000
+          }
+        },
+        "32k": {
+          "name": "32k",
+          "limit": {
+            "context": 32768,
+            "output": 8000
+          }
+        },
+        "64k": {
+          "name": "64k",
+          "limit": {
+            "context": 65536,
+            "output": 8000
+          }
+        },
+        "128k": {
+          "name": "128k",
           "limit": {
             "context": 131072,
+            "output": 8000
+          }
+        },
+        "256k": {
+          "name": "256k",
+          "limit": {
+            "context": 262144,
             "output": 8000
           }
         }
       }
     },
-    "Beast - Qwen 4": {
+    "Docker - 11434": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Beast - Qwen 4",
+      "name": "Docker - 11434",
+      "options": {
+        "baseURL": "http://llamacpp:11434/v1"
+      },
+      "models": {
+        "16k": {
+          "name": "16k",
+          "limit": {
+            "context": 16384,
+            "output": 8000
+          }
+        },
+        "32k": {
+          "name": "32k",
+          "limit": {
+            "context": 32768,
+            "output": 8000
+          }
+        },
+        "64k": {
+          "name": "64k",
+          "limit": {
+            "context": 65536,
+            "output": 8000
+          }
+        },
+        "128k": {
+          "name": "128k",
+          "limit": {
+            "context": 131072,
+            "output": 8000
+          }
+        },
+        "256k": {
+          "name": "256k",
+          "limit": {
+            "context": 262144,
+            "output": 8000
+          }
+        }
+      }
+    },
+
+    "Beast - 11434": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Beast - 11434",
+      "options": {
+        "baseURL": "http://192.168.8.10:11434/v1"
+      },
+      "models": {
+        "16k": {
+          "name": "16k",
+          "limit": {
+            "context": 16384,
+            "output": 8000
+          }
+        },
+        "32k": {
+          "name": "32k",
+          "limit": {
+            "context": 32768,
+            "output": 8000
+          }
+        },
+        "64k": {
+          "name": "64k",
+          "limit": {
+            "context": 65536,
+            "output": 8000
+          }
+        },
+        "128k": {
+          "name": "128k",
+          "limit": {
+            "context": 131072,
+            "output": 8000
+          }
+        },
+        "256k": {
+          "name": "256k",
+          "limit": {
+            "context": 262144,
+            "output": 8000
+          }
+        }
+      }
+    },
+    "Beast - 11435": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Beast - 11435",
       "options": {
         "baseURL": "http://192.168.8.10:11435/v1"
       },
       "models": {
-        "Model": {
-          "name": "Model",
+        "16k": {
+          "name": "16k",
+          "limit": {
+            "context": 16384,
+            "output": 8000
+          }
+        },
+        "32k": {
+          "name": "32k",
+          "limit": {
+            "context": 32768,
+            "output": 8000
+          }
+        },
+        "64k": {
+          "name": "64k",
           "limit": {
             "context": 65536,
+            "output": 8000
+          }
+        },
+        "128k": {
+          "name": "128k",
+          "limit": {
+            "context": 131072,
+            "output": 8000
+          }
+        },
+        "256k": {
+          "name": "256k",
+          "limit": {
+            "context": 262144,
             "output": 8000
           }
         }
@@ -70,17 +203,6 @@
     "webfetch": "allow",
     "websearch": "allow",
     "question": "allow"
-  },
-  "agent": {
-    "explore": {
-      "model": "Beast - Qwen 4/Model"
-    },
-    "build": {
-      "model": "Beast - Qwen 35/Model"
-    },
-    "plan": {
-      "model": "Beast - Qwen 35/Model"
-    }
   },
   "mcp": {
     "rfc-server": {

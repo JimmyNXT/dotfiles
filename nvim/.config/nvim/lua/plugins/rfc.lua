@@ -1,4 +1,4 @@
 return {
-  "jimmynxt/vim-rfc",
-  cmd = {"RFC"}
+    'jimmynxt/vim-rfc',
+    cmd = { 'RFC' },
 }
