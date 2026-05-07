@@ -1,14 +1,27 @@
 { pkgs, ... }:
+let
+  unstable = import (fetchTarball "https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz") { };
+in
 {
   environment.systemPackages = with pkgs; [
-    cargo
-    docker
+    git
+
+    # # Debugging
     gdb
     gf
-    git
+
+    # # AI
+    unstable.opencode
+    
+    # # JavaScript
     nodejs
-    python3
-    rustc
-    rustup
+
+    # # Python
+    # python3
+
+    # # Rust
+    # rustc
+    # rustup
+    # cargo
   ];
 }

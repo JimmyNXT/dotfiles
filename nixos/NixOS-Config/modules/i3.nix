@@ -22,10 +22,10 @@
       desktopManager = {
         xterm.enable = false;
       };
+    };
 
-      displayManager = {
-        defaultSession = "none+i3";
-      };
+    displayManager = {
+      defaultSession = "none+i3";
     };
 
     libinput = {

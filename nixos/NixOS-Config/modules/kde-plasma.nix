@@ -23,4 +23,10 @@
     displayManager.sddm.enable = true;
     desktopManager.plasma6.enable = true;
   };
+
+  environment = {
+    sessionVariables = {
+      TERMINAL = "konsole";
+    };
+  };
 }

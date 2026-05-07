@@ -209,7 +209,16 @@
       "type": "local",
       "command": ["npx", "-y", "@mjpitz/mcp-rfc"],
       "enabled": true
+    },
+    "searxng": {
+      "type": "local",
+      "command": ["npx", "-y", "mcp-searxng"],
+      "enabled": true,
+      "environment": {
+        "SEARXNG_URL": "http://192.168.8.12:8090"
+      }
     }
+
   },
   "plugin": [
     "@tarquinen/opencode-dcp@latest",

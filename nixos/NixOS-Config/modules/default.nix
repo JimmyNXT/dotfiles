@@ -3,6 +3,7 @@
     ./audio.nix
     ./bluetooth.nix
     ./boot.nix
+    ./development.nix
     ./docker.nix
     ./font.nix
     # ./i3.nix

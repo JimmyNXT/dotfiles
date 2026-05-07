@@ -1,10 +1,7 @@
 { pkgs, ... }:
-let
-  unstable = import (fetchTarball "https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz") { };
-in
+
 {
   environment.systemPackages = with pkgs; [
-    unstable.opencode
     tmux
     zsh-nix-shell
 
@@ -74,13 +71,8 @@ in
   };
 
   environment = {
-    shellInit = ''
-      export PATH=$PATH:$HOME/bin
-    '';
-
     sessionVariables = {
       EDITOR = "nvim";
-      TERMINAL = "konsole";
     };
   };
 }

@@ -15,10 +15,9 @@
     nixpkgs-fmt
     perlnavigator
     prettier
-    rust-analyzer
-    stylua
     python3Packages.black
-
+    rust-analyzer
     rustfmt
+    stylua
   ];
 }
