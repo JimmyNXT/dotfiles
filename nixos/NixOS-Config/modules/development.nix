@@ -5,15 +5,18 @@ in
 {
   environment.systemPackages = with pkgs; [
     git
+    docker
 
-    # # Debugging
+    # Debugging
+
     gdb
     gf
 
-    # # AI
+    # AI
+    pi-coding-agent
     unstable.opencode
     
-    # # JavaScript
+    # JavaScript
     nodejs
 
     # # Python
