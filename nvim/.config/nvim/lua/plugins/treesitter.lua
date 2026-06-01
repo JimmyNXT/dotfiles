@@ -1,9 +1,6 @@
 if vim.g.is_nixos then
     return {
         'nvim-treesitter/nvim-treesitter',
-        config = function(_, opts)
-            require('nvim-treesitter.configs').setup(opts)
-        end,
         opts = {
             ensure_installed = {}, -- etc, for non-nix systems
             auto_install = false,
@@ -15,10 +12,6 @@ else
     return { -- Highlight, edit, and navigate code
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
-        main = 'nvim-treesitter.configs',
-        config = function(_, opts)
-            require('nvim-treesitter.configs').setup(opts)
-        end,
         opts = {
             ensure_installed = {
                 'c',
