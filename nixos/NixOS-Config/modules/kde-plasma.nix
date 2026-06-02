@@ -12,7 +12,7 @@
     libinput = {
       enable = true;
       touchpad = {
-        naturalScrolling = true;
+        naturalScrolling = false;
         disableWhileTyping = true;
         additionalOptions = ''
           Option "PalmDetection" "True"

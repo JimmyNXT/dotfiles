@@ -14,6 +14,7 @@
     ntfs3g
     stow
     unzip
+    gh
 
     xclip
     zip
@@ -22,6 +23,8 @@
     nix-prefetch-scripts
 
     htop
+
+    ghostty # should be removed once on i3
   ];
 
   programs.zsh = {
@@ -47,6 +50,7 @@
         "sudo"
         "colored-man-pages"
         "virtualenv"
+        "python"
       ];
     };
 

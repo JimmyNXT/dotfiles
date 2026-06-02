@@ -16,6 +16,7 @@
           i3lock
           i3blocks
           rofi
+          ghostty
         ];
       };
 
@@ -31,7 +32,7 @@
     libinput = {
       enable = true;
       touchpad = {
-        naturalScrolling = true;
+        naturalScrolling = false;
         disableWhileTyping = true;
         additionalOptions = ''
           Option "PalmDetection" "True"
@@ -49,5 +50,11 @@
     i3lock-color.enable = true;
     xlock.enable = true;
     xscreensaver.enable = true;
+  };
+
+  environment = {
+    sessionVariables = {
+      TERMINAL = "ghostty";
+    };
   };
 }

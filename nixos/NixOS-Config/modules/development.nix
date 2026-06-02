@@ -13,18 +13,21 @@ in
     gf
 
     # AI
-    pi-coding-agent
+    unstable.pi-coding-agent
     unstable.opencode
-    
+
     # JavaScript
     nodejs
 
     # # Python
-    # python3
+    python313
 
     # # Rust
-    # rustc
-    # rustup
-    # cargo
+    rustc
+    rustup
+    cargo
+
+    # # Cpp
+    gcc
   ];
 }
