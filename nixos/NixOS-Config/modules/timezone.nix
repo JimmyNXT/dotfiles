@@ -1,3 +1,5 @@
-{
-  time.timeZone = "Africa/Johannesburg";
+{ ... }: {
+  flake.nixosModules.timezone = {
+    time.timeZone = "Africa/Johannesburg";
+  };
 }

@@ -1,5 +1,7 @@
-{
-  xdg.mime.defaultApplications = {
-    "inode/directory" = "ranger";
+{ ... }: {
+  flake.nixosModules.mime = {
+    xdg.mime.defaultApplications = {
+      "inode/directory" = "ranger";
+    };
   };
 }

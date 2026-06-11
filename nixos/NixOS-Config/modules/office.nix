@@ -1,9 +1,9 @@
-{ pkgs, ... }:
-{
-  environment.systemPackages = with pkgs; [
-    libreoffice-qt
-    hunspell
-    hunspellDicts.en-gb-large
-  ];
-
+{ ... }: {
+  flake.nixosModules.office = { pkgs, ... }: {
+    environment.systemPackages = with pkgs; [
+      libreoffice-qt
+      hunspell
+      hunspellDicts.en-gb-large
+    ];
+  };
 }

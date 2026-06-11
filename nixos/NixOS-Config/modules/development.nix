@@ -1,33 +1,31 @@
-{ pkgs, ... }:
-let
-  unstable = import (fetchTarball "https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz") { };
-in
-{
-  environment.systemPackages = with pkgs; [
-    git
-    docker
+{ ... }: {
+  flake.nixosModules.development = { pkgs, unstable, ... }: {
+    environment.systemPackages = with pkgs; [
+      git
+      docker
 
-    # Debugging
+      # Debugging
+      gdb
+      gf
 
-    gdb
-    gf
+      # AI
+      unstable.pi-coding-agent
+      unstable.opencode
 
-    # AI
-    unstable.pi-coding-agent
-    unstable.opencode
+      # JavaScript
+      nodejs
 
-    # JavaScript
-    nodejs
+      # Python
+      python313
 
-    # # Python
-    python313
+      # Rust
+      rustc
+      rustup
+      cargo
 
-    # # Rust
-    rustc
-    rustup
-    cargo
-
-    # # Cpp
-    gcc
-  ];
+      # Cpp
+      gcc
+      clang-tools
+    ];
+  };
 }

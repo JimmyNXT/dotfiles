@@ -1,6 +1,6 @@
-{ ... }: {
-  flake.nixosModules.i3 = { pkgs, ... }: {
-    services = {
+{ pkgs, ... }:
+{
+  services = {
     xserver = {
       enable = true;
       xkb = {
