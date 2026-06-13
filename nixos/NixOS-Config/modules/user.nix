@@ -5,7 +5,7 @@
     users = {
       defaultUserShell = pkgs.zsh;
       users.jimmynxt = {
-        useDefaultShell = true;
+        # useDefaultShell = true;
         shell = pkgs.zsh;
         isNormalUser = true;
         extraGroups = [

@@ -38,7 +38,7 @@
         ls = "ls -Fp --color=auto";
         la = "ls -Fp --color=auto -al";
         tmux = "tmux -u";
-        calc = "f() { echo $1 | bc };f";
+        calc = "bc <<<";
       };
 
       ohMyZsh = {
@@ -61,15 +61,35 @@
           if [[ -z "$_ORIGINAL_PROMPT" ]]; then
               _ORIGINAL_PROMPT="$PROMPT"
           fi
-          
+
+          local prompt_prefix=""
+
           if [[ -n "$IN_NIX_SHELL" ]]; then
-              PROMPT="%F{cyan}[nix]%f $_ORIGINAL_PROMPT"
+              prompt_prefix+="%F{cyan}[nix]%f "
+          fi
+
+          if [[ -n "$VIRTUAL_ENV" ]]; then
+              prompt_prefix+="%F{yellow}(venv)%f "
+          fi
+
+          if [[ -n "$prompt_prefix" ]]; then
+              PROMPT="$prompt_prefix$_ORIGINAL_PROMPT"
           else
               PROMPT="$_ORIGINAL_PROMPT"
           fi
         }
 
         precmd_functions+=(add_nix_shell_indicator)
+
+        # Force zsh in nix develop (ignores stdenv's SHELL override)
+        nix() {
+          if [[ "$1" == "develop" ]]; then
+            shift
+            command nix develop "$@" --command zsh
+          else
+            command nix "$@"
+          fi
+        }
       '';
     };
 

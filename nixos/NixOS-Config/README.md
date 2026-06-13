@@ -6,6 +6,7 @@
 flake.nix               # Entry point — defines device configurations
 configuration.nix       # Shared settings (printing, unfree, packages, etc.)
 modules/                # Shared modules — enable per-device
+shells/                 # Dev shells — temporary dev environments
 hosts/
   <device>/
     default.nix         # Hostname + imports (shared config, hardware, modules)
@@ -57,6 +58,44 @@ Replace `HP-Laptop` with your device name (folder name under `hosts/`).
    ```bash
    sudo nixos-rebuild switch --flake .#<name>
    ```
+
+## Dev Shells
+
+Temporary development environments with tools for specific workflows.
+
+| Shell | Tools | Usage |
+|-------|-------|-------|
+| `default` | (empty) | `nix develop` |
+| `python` | python3, pip, virtualenv, ruff, black, mypy | `nix develop .#python` |
+
+### Extend in a project
+
+Create `flake.nix` in your project to inherit the base shell and add project-specific deps:
+
+```nix
+{
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    dotfiles.url = "path:/home/jimmynxt/.dotfiles/nixos/NixOS-Config";
+  };
+
+  outputs = { nixpkgs, dotfiles, ... }: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages.${system};
+  in {
+    devShells.${system}.default = pkgs.mkShell {
+      inputsFrom = [ dotfiles.devShells.${system}.python ];
+      packages = with pkgs.python3Packages; [ requests flask ];
+      shellHook = ''
+        ${dotfiles.devShells.${system}.python.shellHook or ""}
+        # project-specific setup here
+      '';
+    };
+  };
+}
+```
+
+Then run `nix develop` in the project directory.
 
 ### Update flake inputs
 
