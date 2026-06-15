@@ -46,3 +46,7 @@ export NVM_DIR="$HOME/.nvm"
 
 
 export PATH=$HOME/bin:$PATH
+
+if [[ -f ~/.zsh_private ]]; then
+    source ~/.zsh_private
+fi

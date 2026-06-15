@@ -17,7 +17,7 @@
             i3blocks
             rofi
             ghostty
-            xfce.thunar
+            thunar
           ];
         };
 

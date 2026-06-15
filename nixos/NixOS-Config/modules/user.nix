@@ -14,6 +14,7 @@
           "libvirtd"
           "dialout"
           "docker"
+          "video"
         ];
         packages = with pkgs; [
           virt-manager

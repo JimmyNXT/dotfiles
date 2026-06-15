@@ -1,5 +1,5 @@
 { ... }: {
-  flake.nixosModules.audio = {
+  flake.nixosModules.audio = { pkgs, ... }: {
     services.pulseaudio.enable = false;
     security.rtkit.enable = true;
     services.pipewire = {
@@ -8,5 +8,10 @@
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
+    environment.systemPackages = with pkgs; [
+      pulseaudio # provides pactl for volume control in i3
+      pavucontrol
+    ];
   };
 }
