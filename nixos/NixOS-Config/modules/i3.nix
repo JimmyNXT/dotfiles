@@ -11,11 +11,11 @@
         windowManager.i3 = {
           enable = true;
           extraPackages = with pkgs; [
-            dmenu
             i3status
             i3lock
             i3blocks
             rofi
+            picom
             ghostty
             thunar
           ];
@@ -52,10 +52,12 @@
       xscreensaver.enable = true;
     };
 
-    environment = {
-      sessionVariables = {
-        TERMINAL = "ghostty";
-      };
+    environment.systemPackages = with pkgs; [ capitaine-cursors ];
+
+    environment.sessionVariables = {
+      TERMINAL = "ghostty";
+      XCURSOR_THEME = "capitaine-cursors";
+      XCURSOR_SIZE = "24";
     };
   };
 }

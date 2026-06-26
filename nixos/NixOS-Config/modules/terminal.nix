@@ -28,7 +28,9 @@
 
     programs.zsh = {
       enable = true;
-      enableCompletion = true;
+      # Let oh-my-zsh handle compinit (otherwise it's called twice)
+      enableCompletion = false;
+      enableGlobalCompInit = false;
       enableLsColors = true;
 
       shellAliases = {
@@ -51,6 +53,11 @@
           "virtualenv"
           "python"
         ];
+        # Disable update checks (won't work in Nix store)
+        preLoaded = ''
+          zstyle ':omz:update' mode disabled
+          DISABLE_AUTO_UPDATE="true"
+        '';
       };
 
       interactiveShellInit = ''
@@ -90,6 +97,10 @@
             command nix "$@"
           fi
         }
+
+        if [[ -f ~/.zsh_private ]]; then
+          source ~/.zsh_private
+        fi
       '';
     };
 

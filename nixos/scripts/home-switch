@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+nix run github:nix-community/home-manager -- switch -f ~/.dotfiles/nixos/NixOS-Config/home-flake.nix

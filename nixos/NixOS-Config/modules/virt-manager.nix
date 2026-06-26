@@ -4,7 +4,10 @@
       enable = true;
     };
     virtualisation = {
-      libvirtd.enable = true;
+      libvirtd = {
+        enable = true;
+        onBoot = "ignore";
+      };
       spiceUSBRedirection.enable = true;
     };
 

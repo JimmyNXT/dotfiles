@@ -3,7 +3,7 @@
     "Beast - 11435": {
       "baseUrl": "http://192.168.8.10:11435/v1",
       "api": "openai-completions",
-      "apiKey": "IDK",
+      "apiKey": "$IDK",
       "models": [
         {
           "id": "Small",
@@ -11,14 +11,19 @@
           "reasoning": true,
           "contextWindow": 128000,
           "maxTokens": 32000,
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
         }
       ]
     },
     "Beast - 11434": {
       "baseUrl": "http://192.168.8.10:11434/v1",
       "api": "openai-completions",
-      "apiKey": "IDK",
+      "apiKey": "$IDK",
       "models": [
         {
           "id": "Big",
@@ -26,7 +31,12 @@
           "reasoning": true,
           "contextWindow": 128000,
           "maxTokens": 32000,
-          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
         }
       ]
     }
