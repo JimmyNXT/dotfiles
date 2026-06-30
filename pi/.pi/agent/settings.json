@@ -1,0 +1,9 @@
+{
+  "lastChangelogVersion": "0.79.1",
+  "defaultProvider": "LocalHost",
+  "defaultModel": "Big",
+  "defaultThinkingLevel": "high",
+  "packages": [
+    "npm:pi-token-speed"
+  ]
+}

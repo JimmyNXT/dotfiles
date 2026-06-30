@@ -4,6 +4,11 @@
     force = true;
   };
 
+  home.file.".pi/agent/settings.json" = {
+    source = ../../../pi/.pi/agent/settings.json;
+    force = true;
+  };
+
   home.file.".pi/agent/prompts" = {
     source = ../../../pi/.pi/agent/prompts;
     force = true;

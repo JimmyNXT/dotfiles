@@ -3,13 +3,13 @@
     "Beast - 11435": {
       "baseUrl": "http://192.168.8.10:11435/v1",
       "api": "openai-completions",
-      "apiKey": "$IDK",
+      "apiKey": "ollama",
       "models": [
         {
           "id": "Small",
-          "name": "128k",
+          "name": "64k",
           "reasoning": true,
-          "contextWindow": 128000,
+          "contextWindow": 64000,
           "maxTokens": 32000,
           "cost": {
             "input": 0,
@@ -23,13 +23,46 @@
     "Beast - 11434": {
       "baseUrl": "http://192.168.8.10:11434/v1",
       "api": "openai-completions",
-      "apiKey": "$IDK",
+      "apiKey": "ollama",
       "models": [
         {
           "id": "Big",
           "name": "128k",
           "reasoning": true,
           "contextWindow": 128000,
+          "maxTokens": 32000,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        }
+      ]
+    },
+    "LocalHost": {
+      "baseUrl": "http://localhost:11434/v1",
+      "api": "openai-completions",
+      "apiKey": "ollama",
+      "models": [
+        {
+          "id": "Big",
+          "name": "128k",
+          "reasoning": true,
+          "contextWindow": 128000,
+          "maxTokens": 32000,
+          "cost": {
+            "input": 0,
+            "output": 0,
+            "cacheRead": 0,
+            "cacheWrite": 0
+          }
+        },
+        {
+          "id": "Small",
+          "name": "64k",
+          "reasoning": true,
+          "contextWindow": 64000,
           "maxTokens": 32000,
           "cost": {
             "input": 0,

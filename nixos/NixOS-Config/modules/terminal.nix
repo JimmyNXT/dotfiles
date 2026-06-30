@@ -23,7 +23,7 @@
 
       htop
 
-      ghostty # should be removed once on i3
+      sshfs
     ];
 
     programs.zsh = {

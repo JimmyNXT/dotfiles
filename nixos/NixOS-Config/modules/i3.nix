@@ -6,6 +6,7 @@
         xkb = {
           layout = "za";
           variant = "";
+          options = "lv3:ralt_alt";
         };
 
         windowManager.i3 = {
@@ -52,12 +53,10 @@
       xscreensaver.enable = true;
     };
 
-    environment.systemPackages = with pkgs; [ capitaine-cursors ];
-
     environment.sessionVariables = {
       TERMINAL = "ghostty";
-      XCURSOR_THEME = "capitaine-cursors";
-      XCURSOR_SIZE = "24";
+      GTK_THEME = "Adwaita-dark";
+      QT_STYLE_OVERRIDE = "adwaita-dark";
     };
   };
 }

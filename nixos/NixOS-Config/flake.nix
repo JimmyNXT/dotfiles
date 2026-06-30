@@ -51,10 +51,7 @@
 
         flake.nixosConfigurations = {
           HP-Laptop = mkHost "HP-Laptop" [ ];
-
-          # Add new hosts here — just create a hosts/<name>/ directory
-          # Desktop = mkHost "Desktop" [ ];
-          # Server  = mkHost "Server"  [ ];
+          Dev-PC = mkHost "Dev-PC" [ ];
         };
       });
 }
