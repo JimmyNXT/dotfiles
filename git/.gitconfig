@@ -1,13 +1,9 @@
-[core]
-  editor = nvim
-  filemode = false
+[user]
+	email = dminnie33@gmail.com
+	name = Dean Minnie
 
-[color]
-  ui = auto
+[includeIf "hasconfig:remote.*.url:**/git.nanoteq.net/**"]
+	path = ~/.gitconfig-work
 
-[alias]
-  st = status
-  co = checkout
-  br = branch
-  ci = commit
-  lg = log --oneline --graph -- all
+[credential]
+	helper = cache --timeout 900

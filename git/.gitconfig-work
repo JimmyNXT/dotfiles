@@ -1,0 +1,6 @@
+[user]
+	name = Dean Minnie
+	email = dean@nanoteq.net
+
+[http "https://git.nanoteq.net"]
+	sslVerify = false

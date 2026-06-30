@@ -14,6 +14,7 @@
     nix
     office
     okular
+    pi-dev
     terminal
     timezone
     udisk2
