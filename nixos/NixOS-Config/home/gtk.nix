@@ -5,7 +5,7 @@
     enable = true;
     theme = {
       name = "Adwaita-dark";
-      package = pkgs.adwaita-dark-icon-theme;
+      package = pkgs.gnome-themes-extra;
     };
     iconTheme = {
       name = "Adwaita";
@@ -16,6 +16,9 @@
       package = pkgs.capitaine-cursors;
       size = 24;
     };
+
+    # Adopt new default: don't set a separate GTK4 theme (relies on GTK4's built-in Adwaita)
+    gtk4.theme = null;
 
     # GTK3 settings
     gtk3.extraConfig = {

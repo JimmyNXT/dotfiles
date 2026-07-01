@@ -5,6 +5,9 @@
       window-decoration = false
       gtk-titlebar = false
       window-show-tab-bar = always
+
+      # Use xterm-256color so remote hosts without ghostty terminfo work correctly
+      term = xterm-256color
     '';
   };
 }

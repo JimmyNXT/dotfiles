@@ -1,8 +1,8 @@
 { self, ... }: {
   imports = with self.nixosModules; [
     audio
-    bluetooth
     boot
+    claude
     development
     docker
     drawio
@@ -15,12 +15,12 @@
     nix
     office
     okular
+    pi-dev
     terminal
     timezone
     udisk2
     user
     virt-manager
-    wireless
   ];
 
   networking.hostName = "Dev-PC";
@@ -43,7 +43,21 @@
   #   prefixLength = 24;
   # }];
   # networking.defaultGateway = "192.168.1.1";
-  # networking.nameservers = [ "1.1.1.1" "8.8.8.8" ];
+
+  networking.interfaces.br0.ipv4.routes = [
+    {
+      address = "172.0.0.0";
+      prefixLength = 8;
+      via = "10.37.12.102";
+    }
+  ];
+
+  networking.nameservers = [
+    "172.25.40.101"
+    "10.37.12.5"
+    "1.1.1.1"
+    "8.8.8.8"
+  ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

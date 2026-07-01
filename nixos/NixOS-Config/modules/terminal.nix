@@ -22,6 +22,7 @@
       nix-prefetch-scripts
 
       htop
+      lm_sensors
 
       sshfs
     ];

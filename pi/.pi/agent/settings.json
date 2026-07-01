@@ -1,9 +1,7 @@
 {
   "lastChangelogVersion": "0.79.1",
   "defaultProvider": "LocalHost",
-  "defaultModel": "Big",
+  "defaultModel": "Small",
   "defaultThinkingLevel": "high",
-  "packages": [
-    "npm:pi-token-speed"
-  ]
+  "packages": ["npm:pi-token-speed", "npm:pi-subagents", "npm:context-mode"]
 }
