@@ -1,5 +1,9 @@
 { ... }: {
   flake.nixosModules.i3 = { pkgs, ... }: {
+    programs.dconf.enable = true;
+    programs.thunar.enable = true;
+    programs.xfconf.enable = true;
+
     services = {
       xserver = {
         enable = true;

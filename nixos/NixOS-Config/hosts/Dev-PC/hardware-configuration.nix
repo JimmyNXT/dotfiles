@@ -72,6 +72,51 @@
     { device = "/dev/disk/by-uuid/bf1fbf51-d106-49eb-bef5-1be42929c111"; }
   ];
 
+  fileSystems."/mnt/nas/Share" = {
+    device = "//10.37.12.7/Share";
+    fsType = "cifs";
+    options = [
+      "credentials=/etc/smb-secrets/nas"
+      "uid=1000"
+      "gid=100"
+      "x-systemd.automount"   # mount on first access, not at boot
+      "noauto"
+      "x-systemd.idle-timeout=60"
+      "x-systemd.device-timeout=5s"
+      "x-systemd.mount-timeout=5s"
+    ];
+  };
+
+  fileSystems."/mnt/nas/Software" = {
+    device = "//10.37.12.7/Software";
+    fsType = "cifs";
+    options = [
+      "credentials=/etc/smb-secrets/nas"
+      "uid=1000"
+      "gid=100"
+      "x-systemd.automount"   # mount on first access, not at boot
+      "noauto"
+      "x-systemd.idle-timeout=60"
+      "x-systemd.device-timeout=5s"
+      "x-systemd.mount-timeout=5s"
+    ];
+  };
+
+  fileSystems."/mnt/nas/Data" = {
+    device = "//10.37.12.7/Data";
+    fsType = "cifs";
+    options = [
+      "credentials=/etc/smb-secrets/nas"
+      "uid=1000"
+      "gid=100"
+      "x-systemd.automount"   # mount on first access, not at boot
+      "noauto"
+      "x-systemd.idle-timeout=60"
+      "x-systemd.device-timeout=5s"
+      "x-systemd.mount-timeout=5s"
+    ];
+  };
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

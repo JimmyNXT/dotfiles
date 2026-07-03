@@ -8,14 +8,17 @@
     drawio
     font
     i3
+    llm-host
     locale
     mime
     neovim
     network
     nix
+    obsidian
     office
     okular
     pi-dev
+    teams
     terminal
     timezone
     udisk2
