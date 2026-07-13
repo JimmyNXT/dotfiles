@@ -3,5 +3,5 @@
   "defaultProvider": "LocalHost",
   "defaultModel": "Small",
   "defaultThinkingLevel": "high",
-  "packages": ["npm:pi-token-speed", "npm:pi-subagents", "npm:context-mode"]
+  "packages": ["npm:pi-token-speed" ]
 }

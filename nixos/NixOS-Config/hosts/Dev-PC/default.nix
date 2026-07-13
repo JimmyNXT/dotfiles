@@ -35,10 +35,23 @@
 
   # Bridge for VMs — slaves enp3s0 into br0 so VMs are on the LAN
   networking.bridges.br0.interfaces = [ "enp3s0" ];
-  networking.interfaces.br0.useDHCP = true;
+  networking.interfaces.br0 = {
+    useDHCP = true;
+
+    ipv4.routes = [
+      {
+        address = "172.0.0.0";
+        prefixLength = 8;
+        via = "10.37.12.102";
+      }
+    ];
+  };
 
   # Don't let NetworkManager manage the enslaved physical interface
-  networking.networkmanager.unmanaged = [ "enp3s0" ];
+  networking.networkmanager.unmanaged = [
+    "enp3s0"
+    "enp0s20f0u7u3c2"
+  ];
 
   # If you have a static IP, use this instead of useDHCP:
   # networking.interfaces.br0.ipv4.addresses = [{
@@ -46,14 +59,6 @@
   #   prefixLength = 24;
   # }];
   # networking.defaultGateway = "192.168.1.1";
-
-  networking.interfaces.br0.ipv4.routes = [
-    {
-      address = "172.0.0.0";
-      prefixLength = 8;
-      via = "10.37.12.102";
-    }
-  ];
 
   networking.nameservers = [
     "172.25.40.101"

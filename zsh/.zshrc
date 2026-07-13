@@ -26,6 +26,8 @@ export PATH=$PATH:/usr/local/go/bin
 
 export ANDROID_HOME=${HOME}/Android/Sdk
 
+ssh() { command ssh "$@"; printf '\033[?1000l\033[?1002l\033[?1003l\033[?1006l'; }
+
 alias ls='ls -Fp --color=auto'
 alias la='ls -Fp --color=auto -al'
 alias tmux='tmux -u'
