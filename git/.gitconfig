@@ -2,6 +2,9 @@
 	email = dminnie33@gmail.com
 	name = Dean Minnie
 
+[core]
+	askPass =
+
 [includeIf "hasconfig:remote.*.url:**/git.nanoteq.net/**"]
 	path = ~/.gitconfig-work
 

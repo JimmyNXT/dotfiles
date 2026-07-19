@@ -1,0 +1,17 @@
+name: keystone
+root: ~/
+
+windows:
+  - Config:
+      layout: tiled
+      panes:
+        - cd ~/.dotfiles
+        - nvim
+  - AI: 
+      layout: tiled
+      panes:
+        - cd ~/.dotfiles
+  - run:
+      layout: tiled
+      panes:
+        - cd ~/.dotfiles

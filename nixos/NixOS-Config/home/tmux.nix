@@ -8,4 +8,9 @@
     source = ../../../tmuxinator/.config/tmuxinator/keystone.yml;
     force = true;
   };
+
+  home.file.".config/tmuxinator/dotfiles.yml" = {
+    source = ../../../tmuxinator/.config/tmuxinator/dotfiles.yml;
+    force = true;
+  };
 }
