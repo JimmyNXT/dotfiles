@@ -3,6 +3,7 @@
     audio
     bluetooth
     boot
+    cad
     development
     docker
     font

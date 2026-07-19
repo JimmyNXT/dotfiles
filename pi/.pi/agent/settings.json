@@ -3,5 +3,11 @@
   "defaultProvider": "LocalHost",
   "defaultModel": "Small",
   "defaultThinkingLevel": "high",
-  "packages": ["npm:pi-token-speed", "npm:pi-subagents", "npm:context-mode"]
+  "packages": [
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:pi-token-speed",
+    "npm:pi-sdd-stack",
+    "npm:pi-subagents"
+  ]
 }
