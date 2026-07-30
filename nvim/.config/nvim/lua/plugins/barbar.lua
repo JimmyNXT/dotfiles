@@ -13,6 +13,7 @@ return {
         },
         maximum_length = 30,
         clickable = true,
+        drag_to_reorder = false,
     },
     config = function(_, opts)
         require('barbar').setup(opts)
