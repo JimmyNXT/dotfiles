@@ -7,6 +7,7 @@
     docker
     drawio
     font
+    hexeditor
     i3
     llm-host
     locale
@@ -27,6 +28,7 @@
   ];
 
   networking.hostName = "Dev-PC";
+  networking.useNetworkd = true;
 
   # Trust the Fortinet CA certificate
   security.pki.certificateFiles = [
@@ -51,6 +53,7 @@
   networking.networkmanager.unmanaged = [
     "enp3s0"
     "enp0s20f0u7u3c2"
+    "br0"
   ];
 
   # If you have a static IP, use this instead of useDHCP:

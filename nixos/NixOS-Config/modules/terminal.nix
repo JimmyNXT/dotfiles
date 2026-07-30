@@ -89,6 +89,12 @@
 
         precmd_functions+=(add_nix_shell_indicator)
 
+        # Reset terminal mouse mode after SSH disconnects
+        ssh() {
+          command ssh "$@"
+          printf '\e[?1000l\e[?1001l\e[?1002l\e[?1003l\e[?1006l\e[?1015l'
+        }
+
         # Force zsh in nix develop (ignores stdenv's SHELL override)
         nix() {
           if [[ "$1" == "develop" ]]; then

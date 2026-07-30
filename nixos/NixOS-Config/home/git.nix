@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 { lib, ... }: {
   home.activation.seedGitSettings = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
     if [ ! -f "$HOME/.gitconfig" ]; then
@@ -11,17 +10,4 @@
       chmod 644 "$HOME/.gitconfig-work"
     fi
   '';
-
-=======
-{ ... }: {
-#   home.file.".gitconfig" = {
-#     source = ../../../git/.gitconfig;
-#     force = true;
-#   };
-# 
-#   home.file.".gitconfig-work" = {
-#     source = ../../../git/.gitconfig-work;
-#     force = true;
-#   };
->>>>>>> refs/remotes/origin/main
 }

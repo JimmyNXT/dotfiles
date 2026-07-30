@@ -12,7 +12,7 @@ return {
             ['neo-tree'] = true, -- { event = 'BufWipeout' },
         },
         maximum_length = 30,
-        clickable = false,
+        clickable = true,
     },
     config = function(_, opts)
         require('barbar').setup(opts)
