@@ -6,13 +6,16 @@
     cad
     development
     docker
+    # drone
     font
     i3
     locale
+    # lutris
     mime
     neovim
     network
     nix
+    obsidian
     office
     okular
     pi-dev

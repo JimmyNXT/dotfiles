@@ -2,8 +2,8 @@
   programs.nix-ld.enable = true;
 
   # Enable man pages
-  documentation.man.enable = true;
-  documentation.man.cache.enable = true;
+  # documentation.man.enable = true;
+  # documentation.man.cache.enable = true;
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
