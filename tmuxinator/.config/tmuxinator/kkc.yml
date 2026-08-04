@@ -1,0 +1,19 @@
+name: kkc
+root: ~/
+
+windows:
+  - Driver:
+      layout: tiled
+      panes:
+        - cd ~/git/IP-Granite/kernel_custom_crypto
+        - nvim
+  - FreeBSD-SRC: 
+      layout: tiled
+      panes:
+        - cd ~/git/nanOS/freebsd-src
+        - nvim
+  - Log:
+      layout: tiled
+      panes:
+        - cd ~/
+        - tail -f /var/log/messages
