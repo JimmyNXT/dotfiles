@@ -9,12 +9,15 @@
         shell = pkgs.zsh;
         isNormalUser = true;
         extraGroups = [
-          "wheel"
-          "networkmanager"
-          "libvirtd"
+          "adbusers"
           "dialout"
           "docker"
+          "kvm"
+          "libvirtd"
+          "networkmanager"
           "video"
+          "wheel"
+          "wireshark"
         ];
         packages = with pkgs; [
           virt-manager
