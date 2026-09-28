@@ -1,5 +1,6 @@
 { self, ... }: {
   imports = with self.nixosModules; [
+    android-development
     audio
     bluetooth
     boot
