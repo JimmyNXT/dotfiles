@@ -15,6 +15,7 @@
           "dialout"
           "docker"
           "video"
+          "wireshark"
         ];
         packages = with pkgs; [
           virt-manager

@@ -21,6 +21,10 @@
       # Cpp
       gcc
       clang-tools
+
+      # Databases
+      dbeaver-bin
     ];
+    programs.wireshark.enable = true;
   };
 }
