@@ -19,7 +19,9 @@
     obsidian
     office
     okular
+    opencode
     pi-dev
+    reticulum
     terminal
     timezone
     udisk2

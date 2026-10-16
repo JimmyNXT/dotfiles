@@ -1,7 +1,7 @@
 {
   "providers": {
-    "Beast - 11435": {
-      "baseUrl": "http://192.168.8.10:11435/v1",
+    "Beast": {
+      "baseUrl": "http://llm.minnie.local/v1",
       "api": "openai-completions",
       "apiKey": "ollama",
       "models": [
@@ -17,19 +17,12 @@
             "cacheRead": 0,
             "cacheWrite": 0
           }
-        }
-      ]
-    },
-    "Beast - 11434": {
-      "baseUrl": "http://192.168.8.10:11434/v1",
-      "api": "openai-completions",
-      "apiKey": "ollama",
-      "models": [
+        },
         {
           "id": "Big",
           "name": "128k",
           "reasoning": true,
-          "contextWindow": 128000,
+          "contextWindow": 80000,
           "maxTokens": 32000,
           "cost": {
             "input": 0,

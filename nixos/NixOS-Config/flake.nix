@@ -10,6 +10,7 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    reticulum.url = "github:fotografm/reticulum-flake";
   };
 
   outputs = inputs@{ flake-parts, ... }:
