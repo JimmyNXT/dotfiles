@@ -21,6 +21,11 @@
       # Cpp
       gcc
       clang-tools
+
+      # Databases
+      dbeaver-bin
+
+      # Network Debugging
       wireshark
     ];
     programs.wireshark = {

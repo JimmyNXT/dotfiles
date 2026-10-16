@@ -25,6 +25,8 @@
       lm_sensors
 
       sshfs
+
+      tcpdump
     ];
 
     programs.zsh = {
