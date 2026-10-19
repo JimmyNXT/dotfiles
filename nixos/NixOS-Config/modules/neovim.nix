@@ -19,6 +19,9 @@
       rust-analyzer
       rustfmt
       stylua
+
+      hunspell
+      gopls
     ];
   };
 }

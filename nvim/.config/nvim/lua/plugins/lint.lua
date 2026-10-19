@@ -14,7 +14,7 @@ return {
             json = { 'jsonlint' },
             rst = { 'vale' },
             dockerfile = { 'hadolint' },
-            go = { 'gospel' },
+            -- go = { 'gopls' },
             c = { 'clangtidy' },
             cpp = { 'clangtidy' },
         }
