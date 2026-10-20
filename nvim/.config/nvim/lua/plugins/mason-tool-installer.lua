@@ -14,6 +14,7 @@ return {
             'perlnavigator',
             'prettier',
             'eslint_d',
+            'neocmakelsp'
         }
 
         -- LSP Servers that should only be installed on not FreeBSD

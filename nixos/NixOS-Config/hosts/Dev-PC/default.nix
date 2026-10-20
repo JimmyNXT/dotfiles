@@ -10,6 +10,7 @@
     font
     hexeditor
     i3
+    iPhone
     llm-host
     locale
     mime
@@ -26,6 +27,7 @@
     udisk2
     user
     virt-manager
+    vscode
   ];
 
   networking.hostName = "Dev-PC";

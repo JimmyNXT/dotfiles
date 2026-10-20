@@ -1,6 +1,7 @@
 { ... }: {
   flake.nixosModules.vscode = { pkgs, ... }: {
     environment.systemPackages = with pkgs; [
+      vscode.fhs
       (vscode-with-extensions.override {
         vscodeExtensions = with vscode-extensions; [
           # Nix
